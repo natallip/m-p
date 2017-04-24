@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Hello!</title>
+    <meta content="" name="author">
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta content="ie=edge" http-equiv="x-ua-compatible">
+    <link rel="stylesheet" href="/assets/css/foundation.css">
+    <link rel="stylesheet" href="/assets/css/app.css">
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+    <script src="/assets/js/foundation.js" defer></script>
+    <script src="/assets/js/app.js" defer></script><!--[if lt IE 9]>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script><![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="wrapper-welcome">
+        <div class="hero__bg"><img class="hero__bg-img" src="assets/img/bg/bg.jpg" alt=""></div><a class="authorization welcome__authorization" href="login.html">Авторизоваться</a>
+        <div class="section__user-block">
+          <div class="user-block">
+            <div class="user__photo-wrap">
+              <div class="user__photo"><img class="photo-avatar" src="assets/img/content/avatar-small.jpg" alt=""></div>
+            </div>
+            <div class="user__name">Наталия Петкевич</div>
+            <div class="user__desc">Личный сайт веб-разработчика</div>
+            <ul class="socials user__socials">
+              <li class="socials__item"><a class="socials__link socials__link_vk" href="#"></a></li>
+              <li class="socials__item"><a class="socials__link socials__link_gh" href="#"></a></li>
+              <li class="socials__item"><a class="socials__link socials__link_in" href="#"></a></li>
+            </ul>
+            <ul class="menu user__line-green">
+              <li class="menu__item"><a class="menu__link" href="works.html">Мои работы</a></li>
+              <li class="menu__item"><a class="menu__link" href="about.html">Обо мне</a></li>
+              <li class="menu__item"><a class="menu__link" href="blog.html">Блог</a></li>
+            </ul>
+          </div>
+          <div class="user-block--hidden welcome__form">
+            <div class="title title--subtitle">Авторизуйтесь</div>
+            <form class="form" action="mail.php" method="POST" id="order-form">
+              <label class="form__elem" for="login">
+                <div class="form__elem-icon"><i class="icon-user"></i></div>
+                <input class="form__elem-input" type="text" id="login" name="login" placeholder="Логин">
+              </label>
+              <label class="form__elem" for="password">
+                <div class="form__elem-icon"><i class="icon-key"></i></div>
+                <input class="form__elem-input" type="password" id="password" name="password" placeholder="Пароль">
+              </label>
+              <label class="form__elem-checkbox" for="checkbox">
+                <input class="form__checkbox-hidden" type="checkbox" id="checkbox" name="checkbox" checked><span class="form__checkbox-custom"><i class="icon-check"></i></span><span class="form__elem-title">Я человек</span>
+              </label>
+              <div class="form__text">Вы точно не робот?</div>
+              <div class="form__line">
+                <label class="form__elem-radio" for="radio-yes">
+                  <input class="form__radio-hidden" type="radio" id="radio-yes" name="radio-yes" value="yes" checked><span class="form__radio-custom"></span><span class="form__elem-title">Да</span>
+                </label>
+                <label class="form__elem-radio" for="radio-no">
+                  <input class="form__radio-hidden" type="radio" id="radio-no" name="radio-yes" value="no" checked><span class="form__radio-custom"></span><span class="form__elem-title">Не уверен</span>
+                </label>
+              </div>
+              <div class="form__line user__line-green"><a class="menu__item form__elem-main" href="about.html">На главную</a>
+                <input сlass="menu__item form__elem-submit" type="submit" id="submit" name="submit" value="Войти">
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="footer--welcome footer__about-me">&copy; Наталия Петкевич | создано с любовью в LoftSchool | 2017</div>
+    </div>
+  </body>
+</html>
