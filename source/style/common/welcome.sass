@@ -1,0 +1,224 @@
+.hero__bg-img
+	max-width: 100%
+	height: auto
+
+.section__user-block
+	@include centered()
+
+.authorization
+	border: 1px solid #fff
+	border-radius: 5px
+	position: absolute
+	top: 24px
+	right: 100px
+	color: #fff
+	font-size: 16px
+	font-family: 'robotomedium'
+	text-align: center
+	padding: 10px 20px
+	text-decoration: none
+	&:hover
+		background-color: #fff
+		color: $accent
+	
+.user-block
+	padding-top: 30px
+	width: 380px
+	background: rgba(#fcfcfc, .85)
+	border-radius: 5px
+	overflow: hidden
+	border-radius: 5px
+	
+.user-block--hidden
+	display: none
+	
+.user__photo-wrap
+	text-align: center
+
+.user__photo
+	margin-bottom: 10px
+	display: inline-block
+
+.user__name
+	color: $main-font-color
+	text-align: center
+	margin-bottom: 5px
+	font-size: 28px
+
+.user__desc
+	color: $main-font-color
+	font-family: 'robotoregular'
+	text-align: center
+	margin-bottom: 30px
+
+.user__socials
+	text-align: center
+	margin-bottom: 30px
+	.socials__link_vk
+		background: url('../img/icons/svg/vk_green.svg') no-repeat 50% 50%
+	.socials__link_gh
+		background: url('../img/icons/svg/github_green.svg') no-repeat 50% 50%
+	.socials__link_in
+		background: url('../img/icons/svg/in_green.svg') no-repeat 50% 35%
+
+.user__line-green
+	background-color: rgba($accent, .85)
+	text-align: center
+	display: flex
+	justify-content: space-around
+ 
+.menu__item
+	flex-grow: 1
+	margin-right: 0
+	border-right: 2px solid rgba(#fff, .5)
+	&:last-child
+		border-right-width: 0
+
+.menu__link
+	display: block
+	padding: 10px 20px
+	margin: 0
+	&:hover
+		background-color: rgba($accent-dark, .85)
+
+
+.footer--welcome
+	position: absolute
+	bottom: 40px
+	color: #fff
+	@include centered(x)
+
+.user
+	position: relative
+
+.welcome__form
+
+.form
+	display: block
+
+.form__elem
+	display: flex
+	margin: 0 20px 20px
+	border-radius: 5px 
+	overflow: hidden
+	background-color: #fff
+	&-checkbox
+		display: block
+		margin: 0 20px 10px
+		text-align: center
+	&-radio
+		display: inline-block
+		margin: 0 10px 20px 10px
+
+.form__elem-icon
+	display: inline-block
+	width: 45px
+	height: 45px
+	color: rgba($title-color, .5)
+	font-size: 22px
+	background-color: #f0efe9
+	position: relative
+	i
+		@include centered(both)
+
+.form__elem-input
+	display: block
+	height: 45px
+	border-width: 0
+	background-color: #fff
+	opacity: 1
+	padding: 5px 10px
+	flex-grow: 1
+
+.form__line
+	display: block
+	text-align: center
+
+.form__elem-main
+	display: block
+	width: 50%
+	text-decoration: none
+	color: #fff
+	padding: 10px 5px
+	font-size: 16px
+	font-family: 'robotomedium'
+
+.form__elem-submit
+	display: block
+	width: 50%
+	color: #fff
+	background-color: transparent
+	font-size: 16px
+	font-family: 'robotomedium'
+
+.form__radio-hidden
+	display: none
+
+.form__radio-custom
+	display: inline-block
+	position: relative
+	width: 18px
+	height: 18px
+	border-radius: 50%
+	border: 1px solid rgb(204, 204, 204)
+	background: #fff
+	margin-right: 6px
+	vertical-align: middle
+  
+.form__radio-hidden
+	&:checked
+		.form__elem-title
+			color: $accent
+		&+.form__radio-custom
+			&:before
+				content: ''
+				display: block
+				position: absolute
+				top: 4px
+				left: 4px
+				bottom: 4px
+				right: 4px
+				background: $accent
+				border-radius: 50%
+
+.form__checkbox-hidden
+	display: none
+
+.form__checkbox-custom
+	display: inline-block
+	position: relative
+	width: 20px
+	height: 20px
+	border: 1px solid #fff
+	border-radius: 2px
+	background: #fff
+	margin-right: 6px
+	vertical-align: middle
+	i
+		color: transparent
+ 
+.form__checkbox-hidden
+	&:checked
+		&+.form__checkbox-custom
+			i
+				background-color: $accent
+				color: #fff
+				font-size: 16px
+				padding: 1px 3px 4px
+				border-radius: 2px
+				overflow: hidden
+				
+.form__elem-title
+	font-family: 'robotoregular'
+	font-size: 16px
+	color: $main-font-color
+	margin-left: 5px
+	margin-bottom: 10px
+				
+.form__text
+	font-family: 'robotobold'
+	font-size: 16px
+	color: $main-font-color
+	margin-bottom: 10px
+	//margin-top: 20px
+	text-align: center

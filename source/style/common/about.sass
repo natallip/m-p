@@ -1,0 +1,350 @@
+.section
+
+// .about
+// 	background: linear-gradient(to right $white 50%, $beige 50%)
+
+.hero
+	min-height: 600px
+	overflow: hidden
+	position: relative
+	&__socials
+		padding: 20px 
+		width: 30%
+		margin: 0
+	&__hamburger
+		position: absolute
+		top: 20px
+		right: 20px
+	&__bg
+		position: absolute
+		top: 0
+		left: 0
+	&__down-arrow
+
+.socials__link
+	display: block
+	width: 35px
+	height: 30px
+	vertical-align: bottom
+	opacity: .5
+	&:hover
+		opacity: .99
+	&_vk
+		background: url('../img/icons/svg/vk.svg') no-repeat 50% 50%
+	&_gh
+		background: url('../img/icons/svg/github.svg') no-repeat 50% 50%
+	&_in
+		background: url('../img/icons/svg/in.svg') no-repeat 50% 35%
+
+.socials__item
+	display: inline-block
+	margin-right: 5px
+		
+.hamburger
+	background: url('../img/icons/svg/hamburger.svg') no-repeat 50% 50%
+	display: block
+	width: 40px
+	height: 42px
+
+.user 
+	text-align: center
+
+.user__photo
+	border-radius: 50%
+	background-color: rgb(226, 226, 226)
+	width: 147px
+	height: 147px
+	overflow: hidden
+	display: inline-block
+ 
+.photo-avatar 
+	display: block
+	max-width: 100%
+	height: auto
+
+.user__name 
+	margin-bottom: 10px
+	color: #fff
+	font-size: 35px
+	font-family: 'robotomedium'
+
+.user__desc 
+	font-weight: 100
+	color: #fff
+	opacity: .8
+	font-family: 'robotolight'
+	font-size: 16px
+
+.hero
+	.user__name
+		color: #fff
+	.user__desc
+		color: rgba(#fff, .8)
+
+
+.down-arrow 
+	bottom: 40px
+	opacity: .7
+	@include centered(x)
+
+.section__title 
+	display: inline-block
+	@include centered(x)
+
+
+.about 
+	@extend %clearfix
+	&__left
+		float: left
+		width: 50%
+		position: relative
+		background: $white
+	&__right
+		float: right
+		width: 50%
+		position: relative 
+		background: $beige
+	&__triangles 
+		position: absolute
+		bottom: 100%
+
+.triangle 
+	height: 100px
+	width: 100%
+	z-index: 10
+	&_fill 
+		&_white 
+			fill: $white
+		&_beige 
+			fill: $beige
+ 
+
+.about
+	@extend %clearfix
+	&__left-title
+		float: left
+		width: 50%
+		padding: 0 20px
+	&__left-user
+		float: right
+		width: 50%
+		padding: 20px
+
+.about-data__description
+	margin-bottom: 30px
+
+.about__section-title
+	background: url('../img/decor/about-header.png') no-repeat 50% 50%
+	background-size: cover
+		
+.title 
+	color: $title-color
+	font-size: 63px
+	font-family: 'bernier_regularregular'
+	display: inline-block
+	@include centered(x)
+	position: relative
+	background-size: contain
+	background-position: center center
+	background-repeat: no-repeat
+	
+	&:after, &:before 
+		content: ""
+		display: block
+		@include centered(y)
+		background: rgba($title-color, .2)
+		width: 22px
+		height: 5px
+ 	&:after 
+		right: -40px
+	&:before 
+		left: -40px
+
+.user-about__picture
+	max-width: 443px
+	max-height: 390px
+	margin-bottom: 40px
+
+.title--subtitle
+	font-size: 35px
+	color: $main-font-color
+	margin-bottom: 30px
+	
+.text
+	p
+		color: $main-font-color
+		font-size: 16px
+		font-family: 'robotoregular'
+		margin-bottom: 14px
+	
+.about-data
+	padding: 20px
+	padding-left: 30px
+	//padding-bottom: 60px
+
+.about-data__skills
+	padding-bottom: 60px
+
+.skills
+	display: block
+
+.skills-section__list
+	margin-bottom: 30px
+
+.skills__item-name
+	font-family: 'robotomedium'
+	font-size: 28px
+	color: $main-font-color
+	margin-bottom: 15px
+
+.skills-section__item
+	display: inline-block
+	margin-right: 14px
+
+.skill
+	width: 120px
+	height: 120px
+	border: 20px solid rgb(223, 220, 213)
+	border-radius: 50%
+	position: relative
+	&__circle
+		width: 80px
+		height: 80px
+	&__name
+		position: absolute
+		top: 0
+		left: 0
+		@include centered(both)
+		color: $accent
+		font-family: 'robotomedium'
+		font-size: 14px
+		max-width: 67px
+		word-wrap: break-word
+
+.map
+	position: relative
+	
+.section-map
+	width: 100%
+	height: 940px
+	// position: absolute
+	// top: 0
+	// left: 0
+	// right: 0
+	// bottom: 60px
+	
+.section-contacts
+	position: absolute
+	z-index: 10
+	@include centered(both)
+
+.contacts
+	border-radius: 5px
+	background-color: rgb(252, 252, 252)
+	opacity: .85
+	width: 380px
+	padding: 25px 40px
+
+.contacts__title
+	margin-bottom: 30px
+
+.contacts__item
+	padding: 10px 0
+
+.title--small
+	font-size: 35px
+	margin-bottom: 20px
+ 
+.contacts__link
+	display: block
+	text-decoration: none
+	color: rgba($main-font-color, .8)
+	font-size: 16px
+	font-family: 'robotomedium'
+	vertical-align: middle
+
+.contacts__icon
+	display: inline-block
+	vertical-align: middle
+	margin-right: 10px
+
+.contacts__text
+	display: inline-block
+
+footer
+	height: 148px
+	margin-top: -148px
+	z-index: 10
+	position: relative
+
+.footer
+	background: rgba($main-font-color, .85)
+	&__left
+		float: left
+		width: 50%
+		padding: 18px 0
+	&__right	
+		float: right
+		width: 50%
+		text-align: right
+		padding: 18px 0
+	&__line
+		@extend %clearfix
+		display: block
+		padding: 10px 20pxx 
+		border-bottom: 1px solid rgba(#fff, .1)	
+		&:last-child
+			border-bottom-color: transparent
+
+.footer
+	.menu__item
+		border-right-width: 0
+		&:hover
+			.menu__link
+				color: $accent
+				background-color: transparent
+				text-align: left
+
+.menu__item
+	display: inline-block
+	margin-right: 10px
+
+.menu__link
+	display: block
+	text-decoration: none
+	color: #fff	
+	font-size: 16px
+	font-family: 'robotomedium'
+
+.footer__about-me
+	font-family: 'robotolight'
+	font-size: 16px
+	color: rgba(#fff, .5)
+	padding: 10px 20px
+	span
+		padding-top: 20px
+	
+.footer__socials
+	padding-top: 5px
+	padding-right: 20px
+	padding: 5px 20px 0
+
+	
+// .footer
+// 	position: absolute
+// 	bottom: 0
+// 	left: 0
+// 	right: 0
+// 	height: 60px
+// 	background: #000 url("../img/bg/bg-footer.jpg") no-repeat 
+
+.wrapper
+	min-height: 100%
+	overflow: hidden
+		
+.wrapper:after 
+	content: ''
+	display: block
+	height: 148px
+
+

@@ -1,0 +1,72 @@
+.blog__user-block
+	//position: relative
+
+.title--blog
+	@include centered(none)
+	font-size: 63px
+	&:after, &:before 
+		background: rgba(#fff, .2)
+
+.triangle_fill_fff
+	fill: #fff
+
+.blog
+	background-color: #fff
+	@extend %clearfix
+
+.blog__left
+	float: left
+	width: 20%
+	text-align: right
+	padding-top: 50px
+
+.blog__right
+	float: right
+	width: 70%
+	text-align: left
+	//padding-top: 50px
+	overflow: hidden
+
+.sidebar-menu__link
+	display: block
+	text-decoration: none
+	color: $main-font-color
+	padding: 10px 20px 10px 0
+	font-size: 16px
+	font-family: 'robotoregular'
+	border-right: 2px solid transparent 
+	&:hover
+		color: $accent
+		font-family: 'robotobold'
+		border-right-color: $accent
+
+.item-active
+	.sidebar-menu__link
+		color: $accent
+		font-family: 'robotobold'
+		border-right-color: $accent
+ 
+.article
+	border-bottom: 5px solid rgba(#373e42, .07)
+	padding: 50px 0
+
+.article__title
+	font-family: 'bernier_regularregular'
+	font-size: 35px
+	color: $main-font-color
+	margin-bottom: 20px
+
+.article__data
+	font-size: 16px
+	font-family: 'robotoregular'
+	color: $accent
+	margin-bottom: 20px
+
+.article__content
+	font-size: 16px
+	font-family: 'robotoregular'
+	color: $main-font-color
+	p
+		margin-bottom: 8px
+	img
+		display: block
