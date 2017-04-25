@@ -21,12 +21,12 @@ block content
     
     .section__user-block
       img(src="assets/img/decor/portfolio-header.png", alt="").section__title
-      .user        
+      .user-block.user-blok--transparent
         .user__photo-wrap
           .user__photo
             img(src="assets/img/content/avatar-small.jpg", alt="").photo-avatar
-        .user__name.hero__name Наталия Петкевич
-        .user__desc.hero__desc Личный сайт веб-разработчика
+        .user__name Наталия Петкевич
+        .user__desc Личный сайт веб-разработчика
 
   section.section.works
     .about__left
@@ -113,7 +113,7 @@ block content
     .reviews__section-title
         .title
           | Что обо мне 
-          |
+          br 
           |говорят
     .reviews__items
       .review
@@ -151,13 +151,15 @@ block content
       textarea(class="form__textarea form__elem" id="comment" name="comment" cols="42" rows="7" placeholder="Ваше сообщение")
           
               
-      .form__line.line-green
-
-        //a(href="").menu__item.form__elem-main На главную
-    
-              
-        //input(сlass="menu__item form__elem-submit" type="submit" id="submit" name="submit" value="Войти") 
+      .user__line-green
+        a(href="index.html").form__elem-main.form-menu__item На главную
                   
+        input(type="reset" id="reset" name="reset" value="Очистить").form__elem-reset.form-menu__item
+
+    a(href="").down-arrow.reviews__down-arrow
+      img(src="assets/img/icons/svg/arrow_down.svg", alt="").down-arrow__icon
+
+              
 block footer
   footer.footer
     .footer__line

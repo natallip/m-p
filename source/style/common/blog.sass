@@ -1,9 +1,14 @@
-.blog__user-block
-	//position: relative
-
 .title--blog
-	@include centered(none)
-	font-size: 63px
+	color: #fff
+
+.section__title--blog
+	top: 50%
+
+.blog__section-title
+	color: #fff
+	.title:after, .title:before
+		background-color: rgba(#fff, .2)
+	
 	&:after, &:before 
 		background: rgba(#fff, .2)
 
@@ -24,7 +29,6 @@
 	float: right
 	width: 70%
 	text-align: left
-	//padding-top: 50px
 	overflow: hidden
 
 .sidebar-menu__link

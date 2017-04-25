@@ -16,18 +16,18 @@ block content
 
     a(href="").hamburger.hero__hamburger
 
-    a(href="").down-arrow.hero__down-arrow
-      img(src="assets/img/icons/svg/arrow_down.svg", alt="").down-arrow__icon
+    //a(href="").down-arrow.hero__down-arrow
+      //img(src="assets/img/icons/svg/arrow_down.svg", alt="").down-arrow__icon
     
-
     .section__user-block
-      img(src="assets/img/decor/blog-header.png", alt="").section__title
-      .user        
+      img(src="assets/img/decor/blog-header.png", alt="").section__title.section__title--blog
+      .user-block.user-blok--transparent
         .user__photo-wrap
           .user__photo
             img(src="assets/img/content/avatar-small.jpg", alt="").photo-avatar
-        .user__name.hero__name.title.title--blog Блог
-        .user__desc.hero__desc Статьи, которые я написала
+        .blog__section-title 
+          .title.title--blog Блог
+        .user__desc Статьи, которые я написала
 
   section.section.blog
     .about__left

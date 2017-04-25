@@ -5,15 +5,12 @@ block variables
   - var title = 'Hello!'
     
 block content
-  .wrapper-welcome
-    .hero__bg
-        img(src="assets/img/bg/bg.jpg", alt="").hero__bg-img
+  section.section.welcome
 
     a(href="login.html").authorization.welcome__authorization Авторизоваться
 
     .section__user-block
       .user-block
-        
         .user__photo-wrap
           .user__photo
             img(src="assets/img/content/avatar-small.jpg", alt="").photo-avatar
@@ -26,56 +23,14 @@ block content
               a(href="#" class=`socials__link socials__link_${item}`)
 
         ul.menu.user__line-green
-          li.menu__item
+          li.form-menu__item
             a(href="works.html").menu__link Мои работы
-          li.menu__item
+          li.form-menu__item
             a(href="about.html").menu__link Обо мне
-          li.menu__item
+          li.form-menu__item
             a(href="blog.html").menu__link Блог
 
-      .user-block--hidden.welcome__form
-        .title.title--subtitle
-          | Авторизуйтесь
-
-        form(action="mail.php" method="POST" class="form" id="order-form")
-          label(class="form__elem" for="login")
-            .form__elem-icon
-              i.icon-user
-            input(class="form__elem-input" type="text" id="login" name="login" placeholder="Логин")
-
-          label(class="form__elem" for="password")
-            .form__elem-icon
-              i.icon-key
-            input(class="form__elem-input" type="password" id="password" name="password" placeholder="Пароль")
-
-          label(class="form__elem-checkbox" for="checkbox")
-            input(class="form__checkbox-hidden" type="checkbox"  id="checkbox" name="checkbox" checked)
-            span.form__checkbox-custom
-              i.icon-check
-            span.form__elem-title Я человек
-
-          .form__text Вы точно не робот?
-
-
-          .form__line
-
-            label(class="form__elem-radio" for="radio-yes")
-              input(class="form__radio-hidden" type="radio"  id="radio-yes" name="radio-yes" value="yes" checked)
-              span.form__radio-custom
-              span.form__elem-title Да
-
-            label(class="form__elem-radio" for="radio-no")
-              input(class="form__radio-hidden" type="radio"  id="radio-no" name="radio-yes" value="no" checked)
-              span.form__radio-custom
-              span.form__elem-title Не уверен
-                   
-          .form__line.user__line-green
-            a(href="about.html").menu__item.form__elem-main На главную
-                  
-            input(сlass="menu__item form__elem-submit" type="submit" id="submit" name="submit" value="Войти") 
-                  
-
-    
+          
   .footer--welcome.footer__about-me
     | &copy; Наталия Петкевич | создано с любовью в LoftSchool | 2017
 

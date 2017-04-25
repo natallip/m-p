@@ -14,20 +14,26 @@ block content
         li.socials__item
           a(href="#" class=`socials__link socials__link_${item}`)
 
-    a(href="").hamburger.hero__hamburger
+    .hero__hamburger
+      .nav
+        a(href="").nav__link
+          .nav__toggle
+      //ul.nav__list
+
+
 
     a(href="").down-arrow.hero__down-arrow
       img(src="assets/img/icons/svg/arrow_down.svg", alt="").down-arrow__icon
     
     .section__user-block
       img(src="assets/img/decor/portfolio-header.png", alt="").section__title
-      .user        
+      .user-block.user-blok--transparent
         .user__photo-wrap
           .user__photo
             img(src="assets/img/content/avatar-small.jpg", alt="").photo-avatar
-        .user__name.hero__name Наталия Петкевич
-        .user__desc.hero__desc Личный сайт веб-разработчика
-
+        .user__name Наталия Петкевич
+        .user__desc Личный сайт веб-разработчика
+      
   section.section.about
     .about__left.about__column
       svg(
@@ -59,7 +65,9 @@ block content
         .about-data__description.about-user-info
           .about-user-info__title
             .title.title--subtitle
-              | Чем я могу быть полезен
+              | Чем я могу
+              br
+              | быть полезен
           .about-user-info__text.text
             p Больше всего меня привлекает Frontend разработка, но я также знакома и могу решать не сложные задачи на Backend. Но давайте по порядку.
         .about-data__skills
@@ -88,9 +96,9 @@ block content
                         .skill__name= skillTitle
 
   section.section.map
-    .section-map#map
+    .map__container#map
 
-    .contacts.section-contacts
+    .contacts.map__contacts
       .contacts__title.title.title--small
         | Контакты
       ul.contacts__list
@@ -136,8 +144,10 @@ block footer
       .footer__right.footer__about-me
         | &copy; Наталия Петкевич | создано с любовью в LoftSchool | 2017
 
-
-
-
+  
+  script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDwNILHWU2YjDjBQKy2SqVXwpkA5UoaHNs&extension=.js")
+  script(src="https://cdn.mapkit.io/v1/infobox.js")
+  link(href="https://fonts.googleapis.com/css?family=Roboto:300,400" rel="stylesheet") 
+  link(href="https://cdn.mapkit.io/v1/infobox.css" rel="stylesheet") 
 
 
