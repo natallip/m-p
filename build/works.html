@@ -10,9 +10,12 @@
     <meta content="ie=edge" http-equiv="x-ua-compatible">
     <link rel="stylesheet" href="/assets/css/foundation.css">
     <link rel="stylesheet" href="/assets/css/app.css">
-    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+    <!--script(src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript")-->
     <script src="/assets/js/foundation.js" defer></script>
-    <script src="/assets/js/app.js" defer></script><!--[if lt IE 9]>
+    <script src="/assets/js/app.js" defer></script>
+    <!--script(async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDwNILHWU2YjDjBQKy2SqVXwpkA5UoaHNs&callback=initMap")-->
+    <script src="https://api.mapbox.com/mapbox-gl-js/v0.35.1/mapbox-gl.js"></script>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v0.35.1/mapbox-gl.css" rel="stylesheet"><!--[if lt IE 9]>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script><![endif]-->
   </head>
@@ -26,12 +29,12 @@
           <li class="socials__item"><a class="socials__link socials__link_in" href="#"></a></li>
         </ul><a class="hamburger hero__hamburger" href=""></a><a class="down-arrow hero__down-arrow" href=""><img class="down-arrow__icon" src="assets/img/icons/svg/arrow_down.svg" alt=""></a>
         <div class="section__user-block"><img class="section__title" src="assets/img/decor/portfolio-header.png" alt="">
-          <div class="user">       
+          <div class="user-block user-blok--transparent">
             <div class="user__photo-wrap">
               <div class="user__photo"><img class="photo-avatar" src="assets/img/content/avatar-small.jpg" alt=""></div>
             </div>
-            <div class="user__name hero__name">Наталия Петкевич</div>
-            <div class="user__desc hero__desc">Личный сайт веб-разработчика</div>
+            <div class="user__name">Наталия Петкевич</div>
+            <div class="user__desc">Личный сайт веб-разработчика</div>
           </div>
         </div>
       </section>
@@ -103,11 +106,7 @@
       </section>
       <section class="section reviews">
         <div class="reviews__section-title">
-          <div class="title">
-            Что обо мне 
-            
-            говорят
-          </div>
+          <div class="title">Что обо мне <br>говорят</div>
         </div>
         <div class="reviews__items">
           <div class="review"><i class="icon-quote-left"></i>
@@ -140,11 +139,10 @@
             <input class="form__elem-input" type="text" id="email" name="email" placeholder="Email">
           </label>
           <textarea class="form__textarea form__elem" id="comment" name="comment" cols="42" rows="7" placeholder="Ваше сообщение"></textarea>
-          <div class="form__line line-green">
-            <!--a(href="").menu__item.form__elem-main На главную-->
-            <!--input(сlass="menu__item form__elem-submit" type="submit" id="submit" name="submit" value="Войти") -->
+          <div class="user__line-green"><a class="form__elem-main form-menu__item" href="index.html">На главную</a>
+            <input class="form__elem-reset form-menu__item" type="reset" id="reset" name="reset" value="Очистить">
           </div>
-        </form>
+        </form><a class="down-arrow reviews__down-arrow" href=""><img class="down-arrow__icon" src="assets/img/icons/svg/arrow_down.svg" alt=""></a>
       </section>
     </div>
     <footer class="footer">

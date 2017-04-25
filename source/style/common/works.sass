@@ -111,6 +111,8 @@
 	background: url('../img/content/reviews.jpg') no-repeat 0% 0%
 	background-size: cover
 	height: 1150px
+	position: relative
+	vertical-align: top
 
 .reviews__section-title
 	background:  url('../img/decor/about-header.png') no-repeat 50% 50%
@@ -127,6 +129,7 @@
 .review
 	display: inline-block
 	width: 400px
+	vertical-align: top
 
 .icon-quote-left
 	color: rgba($title-color, .2)
@@ -170,21 +173,18 @@
 	color: $accent
 	font-size: 16px
 
+.reviews__down-arrow
+	bottom: 40px
+	z-index: 15
+	@include centered(x)
+	transform: rotate(180deg)
+
 .form-contact
 	width: 380px
 	margin: 0 auto
 	border-radius: 5px
 	background-color: rgba(#fff, .2)
-
-.form__bg
-	// background: url('../img/bg/bg-form.png') no-repeat 0% 0%
-	// background-size: cover
-	// background-color: rgba(#fff, .4);
-	//backdrop-filter: blur(5px)
-	// filter: blur(5px)
-	// position: absolute
-	// width: 380px
-
+	overflow: hidden
 
 .form__textarea
 	display: block
@@ -193,3 +193,20 @@
 	opacity: 1
 	padding: 5px 10px
 	
+.form__elem-reset
+	color: #fff
+	background-color: transparent
+	font-size: 16px
+	font-family: 'robotomedium'
+	background-color: rgba($accent, .85)
+	width: 50%
+	border-width: 0
+
+.form-contact
+	.form-menu__item
+		background-color: ($accent, .85)
+		&:hover
+			background-color: rgba($accent-dark, .85)
+
+
+

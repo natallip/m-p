@@ -10,9 +10,12 @@
     <meta content="ie=edge" http-equiv="x-ua-compatible">
     <link rel="stylesheet" href="/assets/css/foundation.css">
     <link rel="stylesheet" href="/assets/css/app.css">
-    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+    <!--script(src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript")-->
     <script src="/assets/js/foundation.js" defer></script>
-    <script src="/assets/js/app.js" defer></script><!--[if lt IE 9]>
+    <script src="/assets/js/app.js" defer></script>
+    <!--script(async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDwNILHWU2YjDjBQKy2SqVXwpkA5UoaHNs&callback=initMap")-->
+    <script src="https://api.mapbox.com/mapbox-gl-js/v0.35.1/mapbox-gl.js"></script>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v0.35.1/mapbox-gl.css" rel="stylesheet"><!--[if lt IE 9]>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script><![endif]-->
   </head>
@@ -24,14 +27,19 @@
           <li class="socials__item"><a class="socials__link socials__link_vk" href="#"></a></li>
           <li class="socials__item"><a class="socials__link socials__link_gh" href="#"></a></li>
           <li class="socials__item"><a class="socials__link socials__link_in" href="#"></a></li>
-        </ul><a class="hamburger hero__hamburger" href=""></a><a class="down-arrow hero__down-arrow" href=""><img class="down-arrow__icon" src="assets/img/icons/svg/arrow_down.svg" alt=""></a>
+        </ul>
+        <div class="hero__hamburger">
+          <div class="nav"><a class="nav__link" href="">
+              <div class="nav__toggle"></div></a></div>
+          <!--ul.nav__list-->
+        </div><a class="down-arrow hero__down-arrow" href=""><img class="down-arrow__icon" src="assets/img/icons/svg/arrow_down.svg" alt=""></a>
         <div class="section__user-block"><img class="section__title" src="assets/img/decor/portfolio-header.png" alt="">
-          <div class="user">       
+          <div class="user-block user-blok--transparent">
             <div class="user__photo-wrap">
               <div class="user__photo"><img class="photo-avatar" src="assets/img/content/avatar-small.jpg" alt=""></div>
             </div>
-            <div class="user__name hero__name">Наталия Петкевич</div>
-            <div class="user__desc hero__desc">Личный сайт веб-разработчика</div>
+            <div class="user__name">Наталия Петкевич</div>
+            <div class="user__desc">Личный сайт веб-разработчика</div>
           </div>
         </div>
       </section>
@@ -65,7 +73,7 @@
           <div class="about-data">
             <div class="about-data__description about-user-info">
               <div class="about-user-info__title">
-                <div class="title title--subtitle">Чем я могу быть полезен</div>
+                <div class="title title--subtitle">Чем я могу<br>быть полезен</div>
               </div>
               <div class="about-user-info__text text">
                 <p>Больше всего меня привлекает Frontend разработка, но я также знакома и могу решать не сложные задачи на Backend. Но давайте по порядку.</p>
@@ -150,8 +158,8 @@
         </div>
       </section>
       <section class="section map">
-        <div class="section-map" id="map"></div>
-        <div class="contacts section-contacts">
+        <div class="map__container" id="map"></div>
+        <div class="contacts map__contacts">
           <div class="contacts__title title title--small">Контакты</div>
           <ul class="contacts__list">
             <li class="contacts__item"><a class="contacts__link" href="#"><img class="contacts__icon" src="assets/img/icons/svg/skype.svg">
@@ -189,5 +197,9 @@
         <div class="footer__right footer__about-me">&copy; Наталия Петкевич | создано с любовью в LoftSchool | 2017</div>
       </div>
     </footer>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDwNILHWU2YjDjBQKy2SqVXwpkA5UoaHNs&amp;extension=.js"></script>
+    <script src="https://cdn.mapkit.io/v1/infobox.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400" rel="stylesheet">
+    <link href="https://cdn.mapkit.io/v1/infobox.css" rel="stylesheet">
   </body>
 </html>

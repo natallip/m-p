@@ -10,9 +10,12 @@
     <meta content="ie=edge" http-equiv="x-ua-compatible">
     <link rel="stylesheet" href="/assets/css/foundation.css">
     <link rel="stylesheet" href="/assets/css/app.css">
-    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+    <!--script(src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript")-->
     <script src="/assets/js/foundation.js" defer></script>
-    <script src="/assets/js/app.js" defer></script><!--[if lt IE 9]>
+    <script src="/assets/js/app.js" defer></script>
+    <!--script(async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDwNILHWU2YjDjBQKy2SqVXwpkA5UoaHNs&callback=initMap")-->
+    <script src="https://api.mapbox.com/mapbox-gl-js/v0.35.1/mapbox-gl.js"></script>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v0.35.1/mapbox-gl.css" rel="stylesheet"><!--[if lt IE 9]>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script><![endif]-->
   </head>
@@ -24,14 +27,20 @@
           <li class="socials__item"><a class="socials__link socials__link_vk" href="#"></a></li>
           <li class="socials__item"><a class="socials__link socials__link_gh" href="#"></a></li>
           <li class="socials__item"><a class="socials__link socials__link_in" href="#"></a></li>
-        </ul><a class="hamburger hero__hamburger" href=""></a><a class="down-arrow hero__down-arrow" href=""><img class="down-arrow__icon" src="assets/img/icons/svg/arrow_down.svg" alt=""></a>
-        <div class="section__user-block"><img class="section__title" src="assets/img/decor/blog-header.png" alt="">
-          <div class="user">       
+        </ul><a class="hamburger hero__hamburger" href=""></a>
+        <!--a(href="").down-arrow.hero__down-arrow
+        //img(src="assets/img/icons/svg/arrow_down.svg", alt="").down-arrow__icon
+        
+        -->
+        <div class="section__user-block"><img class="section__title section__title--blog" src="assets/img/decor/blog-header.png" alt="">
+          <div class="user-block user-blok--transparent">
             <div class="user__photo-wrap">
               <div class="user__photo"><img class="photo-avatar" src="assets/img/content/avatar-small.jpg" alt=""></div>
             </div>
-            <div class="user__name hero__name title title--blog">Блог</div>
-            <div class="user__desc hero__desc">Статьи, которые я написала</div>
+            <div class="blog__section-title"> 
+              <div class="title title--blog">Блог</div>
+            </div>
+            <div class="user__desc">Статьи, которые я написала</div>
           </div>
         </div>
       </section>

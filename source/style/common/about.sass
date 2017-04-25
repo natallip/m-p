@@ -1,10 +1,8 @@
 .section
-
-// .about
-// 	background: linear-gradient(to right $white 50%, $beige 50%)
-
+	min-height: 650px
+	
 .hero
-	min-height: 600px
+	background: url("../img/bg/portfolio.jpg") no-repeat center
 	overflow: hidden
 	position: relative
 	&__socials
@@ -14,12 +12,15 @@
 	&__hamburger
 		position: absolute
 		top: 20px
-		right: 20px
+		right: 40px
 	&__bg
 		position: absolute
 		top: 0
 		left: 0
 	&__down-arrow
+		bottom: 40px
+		z-index: 15
+		@include centered(x)
 
 .socials__link
 	display: block
@@ -39,13 +40,41 @@
 .socials__item
 	display: inline-block
 	margin-right: 5px
-		
-.hamburger
-	background: url('../img/icons/svg/hamburger.svg') no-repeat 50% 50%
+
+.nav
+	width: 40px
+	height: 35px
+
+.nav__link
+	display: block
+	width: 100%
+	height: 100%
+	
+.nav__toggle 
 	display: block
 	width: 40px
-	height: 42px
+	height: 5px
+	background-color: #fff
+	border-radius: 5px
+	margin: 10px 0
+	//position: relative
 
+.nav__link:before
+	content: ''
+	display: block
+	width: 40px
+	height: 5px
+	background-color: #fff
+	border-radius: 5px
+	
+.nav__link:after
+	content: ''
+	display: block
+	width: 40px
+	height: 5px
+	background-color: #fff
+	border-radius: 5px
+	
 .user 
 	text-align: center
 
@@ -83,9 +112,9 @@
 
 
 .down-arrow 
-	bottom: 40px
 	opacity: .7
-	@include centered(x)
+	&:hover
+		opacity: 1
 
 .section__title 
 	display: inline-block
@@ -108,6 +137,10 @@
 		position: absolute
 		bottom: 100%
 
+.about__triangles
+	position: absolute
+	bottom: 100%
+
 .triangle 
 	height: 100px
 	width: 100%
@@ -117,7 +150,6 @@
 			fill: $white
 		&_beige 
 			fill: $beige
- 
 
 .about
 	@extend %clearfix
@@ -147,6 +179,7 @@
 	background-size: contain
 	background-position: center center
 	background-repeat: no-repeat
+	text-align: center
 	
 	&:after, &:before 
 		content: ""
@@ -169,6 +202,7 @@
 	font-size: 35px
 	color: $main-font-color
 	margin-bottom: 30px
+	text-align: center
 	
 .text
 	p
@@ -180,8 +214,7 @@
 .about-data
 	padding: 20px
 	padding-left: 30px
-	//padding-bottom: 60px
-
+	
 .about-data__skills
 	padding-bottom: 60px
 
@@ -224,16 +257,11 @@
 .map
 	position: relative
 	
-.section-map
+.map__container
 	width: 100%
-	height: 940px
-	// position: absolute
-	// top: 0
-	// left: 0
-	// right: 0
-	// bottom: 60px
+	height: 1075px
 	
-.section-contacts
+.map__contacts
 	position: absolute
 	z-index: 10
 	@include centered(both)
@@ -328,15 +356,6 @@ footer
 	padding-top: 5px
 	padding-right: 20px
 	padding: 5px 20px 0
-
-	
-// .footer
-// 	position: absolute
-// 	bottom: 0
-// 	left: 0
-// 	right: 0
-// 	height: 60px
-// 	background: #000 url("../img/bg/bg-footer.jpg") no-repeat 
 
 .wrapper
 	min-height: 100%

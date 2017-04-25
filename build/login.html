@@ -10,16 +10,18 @@
     <meta content="ie=edge" http-equiv="x-ua-compatible">
     <link rel="stylesheet" href="/assets/css/foundation.css">
     <link rel="stylesheet" href="/assets/css/app.css">
-    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+    <!--script(src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript")-->
     <script src="/assets/js/foundation.js" defer></script>
-    <script src="/assets/js/app.js" defer></script><!--[if lt IE 9]>
+    <script src="/assets/js/app.js" defer></script>
+    <!--script(async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDwNILHWU2YjDjBQKy2SqVXwpkA5UoaHNs&callback=initMap")-->
+    <script src="https://api.mapbox.com/mapbox-gl-js/v0.35.1/mapbox-gl.js"></script>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v0.35.1/mapbox-gl.css" rel="stylesheet"><!--[if lt IE 9]>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script><![endif]-->
   </head>
   <body>
     <div class="wrapper">
-      <div class="wrapper-welcome">
-        <div class="hero__bg"><img class="hero__bg-img" src="assets/img/bg/bg.jpg" alt=""></div>
+      <section class="section welcome">
         <div class="section__user-block">
           <div class="user-block welcome__form">
             <div class="title title--subtitle">Авторизуйтесь</div>
@@ -44,13 +46,13 @@
                   <input class="form__radio-hidden" type="radio" id="radio-no" name="radio-yes" value="no"><span class="form__radio-custom"></span><span class="form__elem-title">Не уверен</span>
                 </label>
               </div>
-              <div class="form__line user__line-green"><a class="menu__item form__elem-main" href="about.html">На главную</a>
-                <input сlass="menu__item form__elem-submit" type="submit" id="submit" name="submit" value="Войти">
+              <div class="user__line-green"><a class="form__elem-main form-menu__item" href="index.html">На главную</a>
+                <input class="form__elem-submit form-menu__item" type="submit" id="submit" name="submit" value="Войти">
               </div>
             </form>
           </div>
         </div>
-      </div>
+      </section>
       <div class="footer--welcome footer__about-me">&copy; Наталия Петкевич | создано с любовью в LoftSchool | 2017</div>
     </div>
   </body>

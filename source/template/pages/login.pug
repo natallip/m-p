@@ -5,9 +5,7 @@ block variables
   - var title = 'Login'
     
 block content
-  .wrapper-welcome
-    .hero__bg
-        img(src="assets/img/bg/bg.jpg", alt="").hero__bg-img
+  section.section.welcome
 
     .section__user-block
       
@@ -47,10 +45,10 @@ block content
               span.form__radio-custom
               span.form__elem-title Не уверен
                    
-          .form__line.user__line-green
-            a(href="about.html").menu__item.form__elem-main На главную
+          .user__line-green
+            a(href="index.html").form__elem-main.form-menu__item На главную
                   
-            input(сlass="menu__item form__elem-submit" type="submit" id="submit" name="submit" value="Войти") 
+            input(type="submit" id="submit" name="submit" value="Войти").form__elem-submit.form-menu__item
                   
 
     
