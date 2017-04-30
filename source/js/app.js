@@ -1,25 +1,170 @@
 
 // колонки одинаковой высоты
-$(function () {
+// $(function () {
 
-function equalHeight(group) {
-  var tallest = 0;
-  group.each(function() {
-    var thisHeight = $(this).height();
-    if(thisHeight > tallest) {
-      tallest = thisHeight;
-    }
+// function equalHeight(group) {
+//   var tallest = 0;
+//   group.each(function() {
+//     var thisHeight = $(this).height();
+//     if(thisHeight > tallest) {
+//       tallest = thisHeight;
+//     }
+//   });
+//   group.height(tallest);
+// }
+
+// $(document).ready(function() {
+//   equalHeight($(".about__column"));
+// });
+
+// });
+
+
+// animation
+ // (function () {      
+ //  $('.section__user-block').slideDown(2000);
+ // })();
+
+// flip
+(function () {        
+  
+$('#btn').on('click', function (e) {
+    e.preventDefault; 
+    $('#myCard').addClass('flip');
+    $(this).fadeOut(600);
+})
+})();
+
+
+// hamburger
+(function(){
+  $('#toggle').click(function() {
+   $(this).toggleClass('active');
+   $('#overlay').toggleClass('open');
   });
-  group.height(tallest);
+ })();
+
+
+// parallax
+// (function(){
+//     var parallaxContainer = document.getElementById('parallax'),
+//         layers = parallaxContainer.children;
+
+// var moveLayers = function (e) {
+    
+//     var initialX = (window.innerWidth / 2) - e.pageX,
+//         initialY = (window.innerHeigth / 2) - e.pageY;
+
+// [].slice.call(layers).forEach(function (layer, i) {
+
+//     var divider = i/100,
+//         positionX = initialX * divider,
+//         positionY = initialY * divider,
+//         bottomPosition = (window.innerHeight / 2) * divider,
+//         layerStyle = layer.style,
+//         transformString = 'translate3d(' + initialX + 'px,' + initialY + 'px, 0)';
+
+//  layerStyle.transform = transformString;
+//  layerStyle.bottom = '-' + bottomPosition + 'px';
+// });
+// }
+// window.addEventListener('mousemove', moveLayers);
+
+// })();
+
+
+
+// parallax
+(function(){
+ var parallax = function(){
+    var bg = document.querySelector('.hero__bg');
+    var user = document.querySelector('.user-block');
+    var sectionText = document.querySelector('.section__title');
+
+    return {
+        move: function (block, windowScroll, strafeAmount) {
+            var strafe = windowScroll / -strafeAmount + '%';
+            var transformString = 'translate3d(0, ' + strafe + ', 0)';
+            var style = block.style;
+
+            style.transform = transformString;
+            style.webkitTransform = transformString;
+
+        },
+    init: function (wScroll) {
+        this.move(bg, wScroll, 45);
+        this.move(sectionText, wScroll, 20);
+        this.move(user, wScroll, 3);
+        }
+    }
+ }();
+
+ window.onscroll = function () {
+    var wScroll = window.pageYOffset;
+    parallax.init(wScroll);
+ }
+
+ })();    
+ 
+
+// blur
+(function() {
+$(document).ready(function(){
+  blur();
+})
+$(window).resize(function(){
+  blur();
+});
+
+function blur() {
+  var imgWidth = $('.blur__bg').width(),
+      blurSection = $('.blur'),
+      blur = $('.blur__form'),
+      posY = blurSection.offset().top - blur.offset().top,   //текущее положение элемента относительно документа.
+      posX = blurSection.offset().left - blur.offset().left;
+  
+  blur.css({
+      'background-size': imgWidth + 'px' + ' ' + 'auto',
+      'background-position': posX + 'px' + ' ' + posY + 'px'
+  })
 }
-
-$(document).ready(function() {
-  equalHeight($(".about__column"));
-});
-
-});
+})();
 
 
+
+ // blur Владимир
+ // (function(){
+ //    var blur = (function () {
+ //        var wrapper = document.querySelector('.blur__form-wrapper');
+ //        var form = document.querySelector('.blur__form');
+
+ //    return {
+ //    set: function () {
+ //        var imgWidth = document.querySelector('.blur__bg').offsetWidth;
+ //        var posLeft = -wrapper.offsetLeft;
+ //        var posTop = -wrapper.offsetTop;
+ //        var blurCSS = form.style;
+
+ //    blurCSS.backgroundSize = imgWidth + 'px' + ' ' + 'auto';
+ //    blurCSS.backgroundPosition = posLeft + 'px' + ' ' + posTop + 'px';
+ //        }
+ //    }
+ //    });
+
+ //    blur.set();
+
+ //    window.onscroll = function () {
+ //        var wScroll = window.pageYOffset;
+ //        parallax.init(wScroll);
+ //    }
+ //    window.onresize = function () {
+ //        blur.set();
+ //    }
+
+ // })();
+
+
+// map
 (function(){
 google.maps.event.addDomListener(window, 'load', init);
     var map, markersArray = [];
@@ -181,3 +326,4 @@ google.maps.event.addDomListener(window, 'load', init);
         }
     }
 })();
+

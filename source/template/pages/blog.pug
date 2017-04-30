@@ -14,13 +14,32 @@ block content
         li.socials__item
           a(href="#" class=`socials__link socials__link_${item}`)
 
-    a(href="").hamburger.hero__hamburger
+    .hero__hamburger
+    
+      .hamburger#toggle
+        .hamburger__line
+        .hamburger__line
+        .hamburger__line
+
+      .overlay#overlay
+        nav.overlay__menu
+          ul.overlay__menu-list
+            li.overlay__menu-item
+              a.overlay__menu-link(href="works.html") Мои работы
+            li.overlay__menu-item
+              a.overlay__menu-link(href="about.html") Обо мне
+            li.overlay__menu-item
+              a.overlay__menu-link(href="blog.html") Блог
+            li.overlay__menu-item
+              a.overlay__menu-link(href="login.html") Авторизация
 
     //a(href="").down-arrow.hero__down-arrow
       //img(src="assets/img/icons/svg/arrow_down.svg", alt="").down-arrow__icon
+
+    .hero__section
+      img(src="assets/img/decor/blog-header.png", alt="").section__title.section__title--blog 
     
-    .section__user-block
-      img(src="assets/img/decor/blog-header.png", alt="").section__title.section__title--blog
+    .hero__user
       .user-block.user-blok--transparent
         .user__photo-wrap
           .user__photo
@@ -30,19 +49,20 @@ block content
         .user__desc Статьи, которые я написала
 
   section.section.blog
-    .about__left
-      svg(
-        viewbox="0 0 1000 100" 
-        preserveAspectRatio="none"
-        class="triangle triangle_fill_fff about__triangles")
-        polygon(points="0,0 0,100 1000,100")
-    .about__right
-      svg(
-        viewbox="0 0 1000 100" 
-        preserveAspectRatio="none"
-        class="triangle triangle_fill_fff about__triangles")
-        polygon(points="0,100 1000,100 1000,0")
-
+    .about__triangle
+      .about__triangle-left
+        svg(
+          viewbox="0 0 1000 100" 
+          preserveAspectRatio="none"
+          class="triangle triangle_fill_fff about__triangles")
+          polygon(points="0,0 0,100 1000,100")
+      .about__triangle-right
+        svg(
+          viewbox="0 0 1000 100" 
+          preserveAspectRatio="none"
+          class="triangle triangle_fill_fff about__triangles")
+          polygon(points="0,100 1000,100 1000,0")
+   
     .blog__left
       ul.sidebar-menu
         li.sidebar-menu__item.item-active

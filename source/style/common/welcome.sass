@@ -1,39 +1,85 @@
-.welcome 
-	background: url("../img/bg/portfolio.jpg") no-repeat center
-	background-size: cover
+//.welcome 
+	//background: url("../img/bg/portfolio.jpg") no-repeat center
+	//background-size: cover
+	//position: absolute
+	// top: 0
+	// left: 0
+	// right: 0
+	// bottom: 0
+
+.welcome__parallax
+	overflow: hidden
+	width: 100%
+	height: 100%
+	position: relative   //
+	
+.parallax
 	position: absolute
 	top: 0
 	left: 0
-	right: 0
-	bottom: 0
+	width: 100%
+	height: 100%
 
+.parallax__layer
+	height: 100%
+	position: absolute
+	width: 1800px
+	left: 50%
+	margin-left: -900px
+	img
+		position: absolute
+		bottom: 0
+		max-width: 100%  //
+
+		
+		
 
 .section__user-block
 	@include centered(both)
 
-.authorization
-	border: 1px solid #fff
-	border-radius: 5px
+.welcome__authorization
 	position: absolute
 	top: 24px
 	right: 100px
+	@include desktop
+		right: 24px
+	@include tablets
+		@include centered(x)
+		right: 8px
+
+.authorization
+	display: inline-block
+	width: 180px
+	height: 45px
+	border: 1px solid #fff
+	border-radius: 5px
 	color: #fff
 	font-size: 16px
 	font-family: 'robotomedium'
 	text-align: center
-	padding: 10px 20px
+	line-height: 45px
 	text-decoration: none
 	&:hover
 		background-color: #fff
 		color: $accent
+	@include tablets
+		font-size: 14px
+		width: 145px
+		height: 40px
+		line-height: 40px
 	
 .user-block
 	padding-top: 30px
 	width: 380px
+	height: 400px
 	background: rgba(#fcfcfc, .85)
 	border-radius: 5px
 	overflow: hidden
 	border-radius: 5px
+	@include laptop
+		width: 350px
+	@include tablets
+		width: 300px
 
 .user-blok--transparent
 	background-color: transparent
@@ -45,7 +91,7 @@
 	text-align: center
 
 .user__photo
-	margin-bottom: 10px
+	margin-bottom: 12px
 	display: inline-block
 
 .user__name
@@ -53,16 +99,32 @@
 	text-align: center
 	margin-bottom: 5px
 	font-size: 28px
+	@include tablets
+		font-size: 21px
+
+.user__name--big
+	font-size: 35px
+	@include tablets
+		font-size: 21px	
 
 .user__desc
 	color: $main-font-color
 	font-family: 'robotoregular'
 	text-align: center
-	margin-bottom: 30px
+	margin-bottom: 35px
+	@include laptop
+		margin-bottom: 25px
+	@include tablets
+		font-size: 14px
+		margin-bottom: 35px
 
 .user__socials
 	text-align: center
-	margin-bottom: 30px
+	margin-bottom: 32px
+	@include laptop
+		//margin-bottom: 25px
+	@include tablets
+		margin-bottom: 32px
 	.socials__link_vk
 		background: url('../img/icons/svg/vk_green.svg') no-repeat 50% 50%
 	.socials__link_gh
@@ -89,17 +151,12 @@
 	display: block
 	padding: 10px 20px
 	margin: 0
+	@include phones
+		font-size: 14px
+		//padding: 5px 
 	
-.footer--welcome
-	position: absolute
-	bottom: 40px
-	color: #fff
-	@include centered(x)
-
 .user
 	position: relative
-
-.welcome__form
 
 .form
 	display: block
@@ -221,6 +278,8 @@
 	font-size: 16px
 	font-family: 'robotomedium'
 	width: 50%
+	@include tablets
+		font-size: 14px
 
 .form__elem-submit
 	color: #fff
@@ -230,4 +289,70 @@
 	background-color: rgba($accent, .85)
 	width: 50%
 	border-width: 0
+	@include tablets
+		font-size: 14px
 
+.footer__welcome
+	bottom: 40px
+	color: #fff
+	font-size: 16px
+	text-align: center
+	@include centered(x)
+	@include tablets
+		font-size: 14px
+
+.flip-container 
+	perspective: 1000px
+
+	/* flip the pane when hovered */
+// .flip-container .flipper, .flip-container.hover .flipper .flip-container.flip .flipper
+//.flip-container.hover .flipper, .flip-container.flip .flipper
+	//transform: rotateY(180deg)
+.flip 
+	.flipper
+ 		transform: rotateY(180deg)
+	
+.flip-container, .front, .back 
+	width: 380px
+	height: 400px
+	@include laptop
+		width: 350px
+		height: 390px
+	@include tablets
+		width: 300px
+		height: 375px
+
+/* flip speed goes here */
+.flipper 
+	transition: 0.6s
+	transform-style: preserve-3d
+	position: relative
+	width: 380px
+	height: 400px
+	@include laptop
+		width: 350px
+		height: 390px
+	@include tablets
+		width: 300px
+		height: 375px
+
+/* hide back of pane during swap */
+.front, .back 
+	backface-visibility: hidden
+	position: absolute
+	top: 0
+	left: 0
+
+/* front pane, placed above back */
+.front 
+	z-index: 2
+	/* for firefox 31 */
+	transform: rotateY(0deg)
+
+/* back, initially hidden pane */
+.back 
+	transform: rotateY(180deg)
+
+
+// .section__user-block
+// 	transform: skewY(10deg) skewY(-10deg)

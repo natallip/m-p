@@ -1,10 +1,12 @@
 .works
+	position: relative
 	svg
 		fill: #faf8f0
 
 .works__title
 	background: #faf8f0
 	padding-bottom: 30px
+	text-align: center
 
 .works__section-title
 	background: url('../img/decor/works-header.png') no-repeat 50% 50%
@@ -13,16 +15,31 @@
 	margin: 0 auto
 	padding-top: 50px	
 	padding-bottom: 30px
+	@include tablets
+		padding-top: 30px
+		padding-bottom: 0
 	
 .works__slider
 	background-color: #f0efe9
 	margin: 0 auto
+
+.slider
+	position: relative
 
 .slider__wrap
 	position: relative
 	height: 750px
 	width: 1200px
 	margin: 0 auto
+	overflow: hidden
+	@include desktop
+		width: 1020px
+	@include laptop
+		width: 520px
+		height: 1014px
+	@include tablets
+		width: 248px
+		height: 570px
 			
 .slider__list
 	position: absolute
@@ -30,41 +47,66 @@
 	font-size: 0
 	top: 0%
 	left: 0%
-	overflow: hidden
-	width: 1200px
 	margin: 0 auto
+	height: 100%
 	
 .slider__item
-	display: inline-block
 	width: 1200px
-	height: 750px
 	position: relative
-	@extend %clearfix
-	padding: 0px 5px
+	display: inline-flex
+	justify-content: space-between
+	align-items: center
+	align-content: center
+	@include  desktop
+		width: 1020px
+	@include laptop
+		width: 520px
+		flex-direction: column
+		height: auto
+		justify-content: space-between
+		align-items: center
+		height: 100%
+		@include tablets
+			width: 248px
 
 .slider__photo
-	float: left
-	width: 50%
-	margin-top: 100px
+	width: 510px
+	@include laptop
+		order: 1
+		margin-top: 0
+	@include tablets
+		width: 248px
 	.photo-slider
 		display: block
-		height: 550px
-		max-width: 100%
-		
+		width: 100%
+		margin: 0 auto
+				
 .slider__descr
-	float: right
-	width: 40%
+	width: 424px
 	display: flex
-	align-content: center
 	flex-direction: column
-	height: 100%
-	justify-content: center
+	align-items: center
+	@include desktop
+		width: 380px
+	@include tablets
+		height: 360px
+		width: 248px
+		
 
 .descr__title
 	font-family: 'bernier_regularregular'
 	font-size: 35px
 	color: $main-font-color
-	margin-bottom: 50px
+	margin-bottom: 26px
+	white-space: pre-line
+	text-align: center
+	@include laptop
+		padding-top: 30px
+		font-size: 30px
+	@include tablets
+		font-size: 21px
+		text-align: center
+		margin-bottom: 10px
 
 .descr__technology
 	font-family: 'robotomedium'
@@ -73,7 +115,13 @@
 	padding: 20px 0
 	border-top: 1px solid $accent	
 	border-bottom: 1px solid $accent
-	margin-bottom: 50px	
+	margin-bottom: 40px	
+	display: inline-block
+	@include tablets
+		font-size: 14px
+		text-align: center
+		margin-bottom: 16px
+		padding: 10px 0
 
 .decsr__btn
 	background-color: $accent
@@ -84,6 +132,9 @@
 	color: #fff
 	padding: 15px 25px
 	text-decoration: none
+	@include tablets
+		padding: 10px 20px
+		font-size: 14px
 	i
 		font-size: 16px
 		color: #fff
@@ -97,50 +148,77 @@
 	color: $accent
 	font-size: 32px
 	text-decoration: none
-	position: absolute
-	top: 40%
+	@include centered(y)
 	z-index: 10
   
 .slider__btn--next 
-  right: 30px
+	right: 30px
+	@include tablets
+		right: 10px
   
 .slider__btn--prev 
-  left: 30px
+	left: 30px
+	@include tablets
+		left: 10px
     
+// .blur
+// 	position: relative
+
 .reviews
-	background: url('../img/content/reviews.jpg') no-repeat 0% 0%
-	background-size: cover
-	height: 1150px
-	position: relative
 	vertical-align: top
+	z-index: 100
+	position: absolute
+	top: 10px
+	left: 50%
+	transform: translateX(-50%)
+	width: 100%
 
 .reviews__section-title
 	background:  url('../img/decor/about-header.png') no-repeat 50% 50%
 	background-size: contain
-	width: 80%
+	text-align: center
+	//width: 80%
 	margin: 0 auto
-	padding: 30px	
+	padding: 40px 0	
+	.title
+		width: 250px
+		@include tablets
+			width: auto
 
 .reviews__items
-	width: 820px
-	margin: 0 auto
-	margin-bottom: 50px
-
+	text-align: center
+	@include tablets
+		padding: 0 30px
+	
 .review
 	display: inline-block
-	width: 400px
+	max-width: 350px
 	vertical-align: top
+	text-align: left
+	&:first-child
+		margin-right: 20px
+	@include tablets
+		margin-bottom: 20px
+		&:first-child
+			margin-right: 0
 
 .icon-quote-left
 	color: rgba($title-color, .2)
 	font-size: 35px
 	margin-bottom: 10px
+	@include tablets
+		display: block
+		text-align: center
+		font-size: 30px
 
 .review__text
 	font-family: 'robotoregular'
 	font-size: 16px
 	color: $main-font-color
 	margin-bottom: 10px
+	text-align: justify
+	@include laptop
+		font-size: 14px
 
 .reviews__autor-descr
 	display: inline-block
@@ -167,24 +245,41 @@
 	font-family: 'robotobold'
 	color: $accent
 	font-size: 16px
+	@include laptop
+		font-size: 14px
 
 .reviews__autor-position
 	font-family: 'robotolight'
 	color: $accent
 	font-size: 16px
+	@include laptop
+		font-size: 14px
 
 .reviews__down-arrow
 	bottom: 40px
-	z-index: 15
+	z-index: 100
 	@include centered(x)
 	transform: rotate(180deg)
 
 .form-contact
+	position: absolute
+	top: 0%
+	left: 50%
+	transform: translateX(-50%)
 	width: 380px
+	height: 440px
 	margin: 0 auto
 	border-radius: 5px
 	background-color: rgba(#fff, .2)
 	overflow: hidden
+	z-index: 100
+	overflow: hidden
+	border-radius: 10px
+	padding-top: 14px
+	@include laptop
+		width: 346px
+	@include tablets
+		width: 300px
 
 .form__textarea
 	display: block
@@ -192,6 +287,11 @@
 	background-color: #fff
 	opacity: 1
 	padding: 5px 10px
+	margin: 0 20px 20px
+	@include laptop
+		max-width: 306px
+	@include tablets
+		max-width: 260px
 	
 .form__elem-reset
 	color: #fff
@@ -201,6 +301,8 @@
 	background-color: rgba($accent, .85)
 	width: 50%
 	border-width: 0
+	@include tablets
+		font-size: 14px
 
 .form-contact
 	.form-menu__item
@@ -208,5 +310,53 @@
 		&:hover
 			background-color: rgba($accent-dark, .85)
 
+.blur
+	height: 100vh
+	height: 1140px
+	position: relative
+	overflow: hidden
+
+.blur__bg
+	position: absolute
+	top: 0
+	left: 0
+	right: 0
+	//bottom: 0
+	min-width: 2000px
+
+.blur__img
+	display: block
+	max-width: 100%
+
+.blur__form-wrapper
+	position: absolute
+	top: 50%
+	left: 50%
+	transform: translateX(-50%)
+	width: 380px
+	height: 440px
+	overflow: hidden
+	border-radius: 10px
+	position: relative
+	//border: 2px solid red
+	@include laptop
+		width: 346px
+		height: 430px
+	@include tablets
+		width: 300px
+		height: 414px
+
+.blur__form
+	width: 100%
+	height: 100%
+	background:  url('../img/content/water.jpg') no-repeat center 70%
+	overflow: hidden
+	border-radius: 10px
+	//position: relative
+	filter: blur(20px)
+	background-size: 2000px 1140px
+	//border: 2px solid #000;
+
+	//background-position: -322px -152px
 
 

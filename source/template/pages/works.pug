@@ -14,33 +14,54 @@ block content
         li.socials__item
           a(href="#" class=`socials__link socials__link_${item}`)
 
-    a(href="").hamburger.hero__hamburger
+    .hero__hamburger
+    
+      .hamburger#toggle
+        .hamburger__line
+        .hamburger__line
+        .hamburger__line
+
+      .overlay#overlay
+        nav.overlay__menu
+          ul.overlay__menu-list
+            li.overlay__menu-item
+              a.overlay__menu-link(href="works.html") Мои работы
+            li.overlay__menu-item
+              a.overlay__menu-link(href="about.html") Обо мне
+            li.overlay__menu-item
+              a.overlay__menu-link(href="blog.html") Блог
+            li.overlay__menu-item
+              a.overlay__menu-link(href="login.html") Авторизация
+
 
     a(href="").down-arrow.hero__down-arrow
       img(src="assets/img/icons/svg/arrow_down.svg", alt="").down-arrow__icon
     
-    .section__user-block
+    .hero__section
       img(src="assets/img/decor/portfolio-header.png", alt="").section__title
+
+    .hero__user      
       .user-block.user-blok--transparent
         .user__photo-wrap
           .user__photo
             img(src="assets/img/content/avatar-small.jpg", alt="").photo-avatar
-        .user__name Наталия Петкевич
+        .user__name.user__name--big Наталия Петкевич
         .user__desc Личный сайт веб-разработчика
 
   section.section.works
-    .about__left
-      svg(
-        viewbox="0 0 1000 100" 
-        preserveAspectRatio="none"
-        class="triangle triangle_fill_white about__triangles")
-        polygon(points="0,0 0,100 1000,100")
-    .about__right
-      svg(
-        viewbox="0 0 1000 100" 
-        preserveAspectRatio="none"
-        class="triangle triangle_fill_white about__triangles")
-        polygon(points="0,100 1000,100 1000,0")
+    .about__triangle
+      .about__triangle-left
+        svg(
+          viewbox="0 0 1000 100" 
+          preserveAspectRatio="none"
+          class="triangle triangle_fill_white about__triangles")
+          polygon(points="0,0 0,100 1000,100")
+      .about__triangle-right
+        svg(
+          viewbox="0 0 1000 100" 
+          preserveAspectRatio="none"
+          class="triangle triangle_fill_beige about__triangles")
+          polygon(points="0,100 1000,100 1000,0")
 
     .works__title
       .works__section-title
@@ -108,58 +129,67 @@ block content
                   a(href="#").decsr__btn 
                     i.icon-link
                     span Посмотреть сайт
+    
 
-  section.section.reviews
-    .reviews__section-title
-        .title
-          | Что обо мне 
-          br 
-          |говорят
-    .reviews__items
-      .review
-        i.icon-quote-left
-        .review__text.
-          Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
-        .reviews__autor
-          .reviews__autor-photo
-            img(src="assets/img/content/review-1.jpg", alt="").autor-photo
-          .reviews__autor-descr
-            .reviews__autor-name Ковальчук Дмитрий
-            .reviews__autor-position основатель Loftschool
-      .review
-        i.icon-quote-left
-        .review__text.
-          Этот код выдержит любые испытания. Только пожалуйста, не загружается сайт на слишком старых браузерах!
-        .reviews__autor
-          .reviews__autor-photo
-            img(src="assets/img/content/review-2.jpg", alt="").autor-photo
-          .reviews__autor-descr
-            .reviews__autor-name Сабанцев Владимир 
-            .reviews__autor-position преподаватель 
+  section.section
+    .blur
+      .reviews    
+        .reviews__section-title
+          .title Что обо мне говорят
+        .reviews__items
+          .review
+            i.icon-quote-left
+            .review__text.
+              Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
+            .reviews__autor
+              .reviews__autor-photo
+                img(src="assets/img/content/review-1.jpg", alt="").autor-photo
+              .reviews__autor-descr
+                .reviews__autor-name Ковальчук Дмитрий
+                .reviews__autor-position основатель Loftschool
+          .review
+            i.icon-quote-left
+            .review__text.
+              Этот код выдержит любые испытания. Только пожалуйста, не загружается сайт на слишком старых браузерах!
+            .reviews__autor
+              .reviews__autor-photo
+                img(src="assets/img/content/review-2.jpg", alt="").autor-photo
+              .reviews__autor-descr
+                .reviews__autor-name Сабанцев Владимир 
+                .reviews__autor-position преподаватель 
 
-    form(action="mail.php" method="POST" class="form-contact" id="contact-form")
+
+
+
+      .blur__bg
+        img(src="assets/img/content/water.jpg", alt="").blur__img
       
-      .title.title--subtitle
-        | Связаться со мной
+         
+      .blur__form-wrapper
+        .blur__form
 
-      label(class="form__elem" for="name")
-        input(class="form__elem-input" type="text" id="name" name="name" placeholder="Имя")
+        form(action="mail.php" method="POST" class="form-contact" id="contact-form")
+      
+          .title.title--subtitle
+            | Связаться со мной
 
-      label(class="form__elem" for="email")
-        input(class="form__elem-input" type="text" id="email" name="email" placeholder="Email")
+          label(class="form__elem" for="name")
+            input(class="form__elem-input" type="text" id="name" name="name" placeholder="Имя")
 
-      textarea(class="form__textarea form__elem" id="comment" name="comment" cols="42" rows="7" placeholder="Ваше сообщение")
-          
-              
-      .user__line-green
-        a(href="index.html").form__elem-main.form-menu__item На главную
+          label(class="form__elem" for="email")
+            input(class="form__elem-input" type="text" id="email" name="email" placeholder="Email")
+
+          textarea(class="form__textarea form__elem" id="comment" name="comment" cols="42" rows="7" placeholder="Ваше сообщение")
+                     
+          .user__line-green
+            a(href="index.html").form__elem-main.form-menu__item На главную
                   
-        input(type="reset" id="reset" name="reset" value="Очистить").form__elem-reset.form-menu__item
+            input(type="reset" id="reset" name="reset" value="Очистить").form__elem-reset.form-menu__item
 
-    a(href="").down-arrow.reviews__down-arrow
-      img(src="assets/img/icons/svg/arrow_down.svg", alt="").down-arrow__icon
+      a(href="").down-arrow.reviews__down-arrow
+        img(src="assets/img/icons/svg/arrow_down.svg", alt="").down-arrow__icon
 
-              
+            
 block footer
   footer.footer
     .footer__line

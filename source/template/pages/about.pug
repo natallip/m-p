@@ -15,32 +15,53 @@ block content
           a(href="#" class=`socials__link socials__link_${item}`)
 
     .hero__hamburger
-      .nav
-        a(href="").nav__link
-          .nav__toggle
-      //ul.nav__list
+    
+      .hamburger#toggle
+        .hamburger__line
+        .hamburger__line
+        .hamburger__line
 
-
-
+      .overlay#overlay
+        nav.overlay__menu
+          ul.overlay__menu-list
+            li.overlay__menu-item
+              a.overlay__menu-link(href="works.html") Мои работы
+            li.overlay__menu-item
+              a.overlay__menu-link(href="about.html") Обо мне
+            li.overlay__menu-item
+              a.overlay__menu-link(href="blog.html") Блог
+            li.overlay__menu-item
+              a.overlay__menu-link(href="login.html") Авторизация
+   
     a(href="").down-arrow.hero__down-arrow
       img(src="assets/img/icons/svg/arrow_down.svg", alt="").down-arrow__icon
     
-    .section__user-block
+    .hero__section
       img(src="assets/img/decor/portfolio-header.png", alt="").section__title
+
+    .hero__user
       .user-block.user-blok--transparent
         .user__photo-wrap
           .user__photo
             img(src="assets/img/content/avatar-small.jpg", alt="").photo-avatar
-        .user__name Наталия Петкевич
+        .user__name.user__name--big Наталия Петкевич
         .user__desc Личный сайт веб-разработчика
       
   section.section.about
-    .about__left.about__column
-      svg(
-        viewbox="0 0 1000 100" 
-        preserveAspectRatio="none"
-        class="triangle triangle_fill_white about__triangles")
-        polygon(points="0,0 0,100 1000,100")
+    .about__triangle
+      .about__triangle-left
+        svg(
+          viewbox="0 0 1000 100" 
+          preserveAspectRatio="none"
+          class="triangle triangle_fill_white about__triangles")
+          polygon(points="0,0 0,100 1000,100")
+      .about__triangle-right
+        svg(
+          viewbox="0 0 1000 100" 
+          preserveAspectRatio="none"
+          class="triangle triangle_fill_beige about__triangles")
+          polygon(points="0,100 1000,100 1000,0")
+    .about__left
       .about__left-title
         .about__section-title
           .title.title--about
@@ -55,19 +76,12 @@ block content
           .user-about__text.text
            p Я веб разработчик из Гродно. Мне 31 год. Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
            p Этот сайт я сделала в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нем свой контент. А пока посмотрите, как тут все классно и красиво!
-    .about__right.about__column
-      svg(
-        viewbox="0 0 1000 100" 
-        preserveAspectRatio="none"
-        class="triangle triangle_fill_beige about__triangles")
-        polygon(points="0,100 1000,100 1000,0")
+    .about__right
       .about-data
         .about-data__description.about-user-info
           .about-user-info__title
             .title.title--subtitle
-              | Чем я могу
-              br
-              | быть полезен
+              | Чем я могу быть полезен
           .about-user-info__text.text
             p Больше всего меня привлекает Frontend разработка, но я также знакома и могу решать не сложные задачи на Backend. Но давайте по порядку.
         .about-data__skills
