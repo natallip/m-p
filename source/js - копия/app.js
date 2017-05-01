@@ -1,8 +1,53 @@
-// index
-if($("div").is("#parallax")) {
-// parallax on index.htmt
-   (function(){
-     var parallaxContainer = document.getElementById('parallax'),
+
+// колонки одинаковой высоты
+// $(function () {
+
+// function equalHeight(group) {
+//   var tallest = 0;
+//   group.each(function() {
+//     var thisHeight = $(this).height();
+//     if(thisHeight > tallest) {
+//       tallest = thisHeight;
+//     }
+//   });
+//   group.height(tallest);
+// }
+
+// $(document).ready(function() {
+//   equalHeight($(".about__column"));
+// });
+
+// });
+
+
+// animation
+ // (function () {      
+ //  $('.section__user-block').slideDown(2000);
+ // })();
+
+// flip
+(function () {        
+  
+$('#btn').on('click', function (e) {
+    e.preventDefault; 
+    $('#myCard').addClass('flip');
+    $(this).fadeOut(600);
+})
+})();
+
+
+// hamburger
+(function(){
+  $('#toggle').click(function() {
+   $(this).toggleClass('active');
+   $('#overlay').toggleClass('open');
+  });
+ })();
+
+
+// parallax на главной странице по движению мышки
+(function(){
+    var parallaxContainer = document.getElementById('parallax'),
         layers = parallaxContainer.children;
 
 var moveLayers = function (e) {
@@ -11,7 +56,7 @@ var moveLayers = function (e) {
         initialY = (window.innerHeight / 2) - e.pageY;
 
 [].slice.call(layers).forEach(function (layer, i) {
-
+console.log(layers);
     var divider = i/100,
         positionX = initialX * divider,
         positionY = initialY * divider,
@@ -24,29 +69,10 @@ var moveLayers = function (e) {
 });
 }
 window.addEventListener('mousemove', moveLayers);
+
 })();
-// flip
-(function () {        
-$('#btn').on('click', function (e) {
-    e.preventDefault; 
-    $('#myCard').addClass('flip');
-    $(this).fadeOut(600);
-})
-})(); 
-} 
 
 
-
-
-// works
-else if ($("section").is(".works")) {
-// hamburger
-(function(){
-  $('#toggle').click(function() {
-   $(this).toggleClass('active');
-   $('#overlay').toggleClass('open');
-  });
- })();
 
 // parallax по скроллу
 (function(){
@@ -77,8 +103,10 @@ else if ($("section").is(".works")) {
     var wScroll = window.pageYOffset;
     parallax.init(wScroll);
  }
+
  })();    
  
+
 // blur
 (function() {
 $(document).ready(function(){
@@ -101,99 +129,43 @@ function blur() {
   })
 }
 })();
-}
 
 
 
+ // blur Владимир
+ // (function(){
+ //    var blur = (function () {
+ //        var wrapper = document.querySelector('.blur__form-wrapper');
+ //        var form = document.querySelector('.blur__form');
 
-// blog
- else if ($("section").is(".blog")) {
-// hamburger
+ //    return {
+ //    set: function () {
+ //        var imgWidth = document.querySelector('.blur__bg').offsetWidth;
+ //        var posLeft = -wrapper.offsetLeft;
+ //        var posTop = -wrapper.offsetTop;
+ //        var blurCSS = form.style;
+
+ //    blurCSS.backgroundSize = imgWidth + 'px' + ' ' + 'auto';
+ //    blurCSS.backgroundPosition = posLeft + 'px' + ' ' + posTop + 'px';
+ //        }
+ //    }
+ //    });
+
+ //    blur.set();
+
+ //    window.onscroll = function () {
+ //        var wScroll = window.pageYOffset;
+ //        parallax.init(wScroll);
+ //    }
+ //    window.onresize = function () {
+ //        blur.set();
+ //    }
+
+ // })();
+
+
+// map
 (function(){
-  $('#toggle').click(function() {
-   $(this).toggleClass('active');
-   $('#overlay').toggleClass('open');
-  });
- })();
-
-// parallax по скроллу
-(function(){
- var parallax = function(){
-    var bg = document.querySelector('.hero__bg');
-    var user = document.querySelector('.user-block');
-    var sectionText = document.querySelector('.section__title');
-
-    return {
-        move: function (block, windowScroll, strafeAmount) {
-            var strafe = windowScroll / -strafeAmount + '%';
-            var transformString = 'translate3d(0, ' + strafe + ', 0)';
-            var style = block.style;
-
-            style.transform = transformString;
-            style.webkitTransform = transformString;
-
-        },
-    init: function (wScroll) {
-        this.move(bg, wScroll, 45);
-        this.move(sectionText, wScroll, 20);
-        this.move(user, wScroll, 3);
-        }
-    }
- }();
-
- window.onscroll = function () {
-    var wScroll = window.pageYOffset;
-    parallax.init(wScroll);
- }
- })();    
-} 
-
-
-
-
-
-// about
-else if ($("section").is(".about")) {
-// hamburger
-(function(){
-  $('#toggle').click(function() {
-   $(this).toggleClass('active');
-   $('#overlay').toggleClass('open');
-  });
- })();
-
-// parallax по скроллу
-(function(){
- var parallax = function(){
-    var bg = document.querySelector('.hero__bg');
-    var user = document.querySelector('.user-block');
-    var sectionText = document.querySelector('.section__title');
-
-    return {
-        move: function (block, windowScroll, strafeAmount) {
-            var strafe = windowScroll / -strafeAmount + '%';
-            var transformString = 'translate3d(0, ' + strafe + ', 0)';
-            var style = block.style;
-
-            style.transform = transformString;
-            style.webkitTransform = transformString;
-
-        },
-    init: function (wScroll) {
-        this.move(bg, wScroll, 45);
-        this.move(sectionText, wScroll, 20);
-        this.move(user, wScroll, 3);
-        }
-    }
- }();
-
- window.onscroll = function () {
-    var wScroll = window.pageYOffset;
-    parallax.init(wScroll);
- }
- })(); 
- //map
- (function(){
 google.maps.event.addDomListener(window, 'load', init);
     var map, markersArray = [];
 
@@ -355,34 +327,3 @@ google.maps.event.addDomListener(window, 'load', init);
     }
 })();
 
-
-} 
-
-
-// login
- //else ($("form").is("#order-form")) {
-//     (function(){
-//      var parallaxContainer = document.getElementById('parallax'),
-//         layers = parallaxContainer.children;
-
-// var moveLayers = function (e) {
-//    // console.log(e);
-//     var initialX = (window.innerWidth / 2) - e.pageX,
-//         initialY = (window.innerHeight / 2) - e.pageY;
-
-// [].slice.call(layers).forEach(function (layer, i) {
-
-//     var divider = i/100,
-//         positionX = initialX * divider,
-//         positionY = initialY * divider,
-//         bottomPosition = (window.innerHeight / 2) * divider,
-//         layerStyle = layer.style,
-//         transformString = 'translate3d(' + positionX + 'px, ' + positionY + 'px, 0)';
-
-//  layerStyle.transform = transformString;
-//  layerStyle.bottom = '-' + bottomPosition + 'px';
-// });
-// }
-// window.addEventListener('mousemove', moveLayers);
-// })();
-//};
