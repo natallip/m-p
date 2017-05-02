@@ -20,17 +20,112 @@
 	@extend %clearfix
 	position: relative
 
-.blog__left
+.sidebar
 	float: left
 	width: 30%
 	text-align: right
 	padding: 0 20px
-	padding-top: 50px
+	padding-top: 30px
+	min-height: 1px
 	@include laptop
-		display: none
-		width: 100%
+		width: 80%
+		position: absolute
+		left: 0
+		//background: $accent
+		height: 100vh
+		// box-shadow: 3px 0px 3px 0px rgba(0, 0, 0, 0.2)
+		// &:after
+		// 	content: ''
+		// 	display: block
+		// 	width: 20px
+		// 	height: 46px
+		// 	border-radius: 100%
+		// 	position: absolute
+		// 	top: 50vh
+		// 	transform: translateY(-50%)
+		// 	right: -8px
+		// 	background: $accent
+		// 	box-shadow: 3px 0px 3px 0px rgba(0, 0, 0, 0.2)
+			
 
-.blog__right
+.sidebar__menu
+	padding-top: 20px
+	@include laptop
+		position: absolute
+		top: 50vh
+		transform: translateY(-50%)
+		width: 90%
+
+		
+.sidebar__item
+	color: $main-font-color
+	padding: 10px 20px 10px 10px
+	font-size: 16px
+	font-family: 'robotoregular'
+	border-right: 2px solid transparent 
+	cursor: pointer
+	@include laptop
+		color: rgba(#fff, .8)
+		border-right: none
+	&:hover
+		color: $accent
+		font-family: 'robotobold'
+		border-right-color: $accent
+		@include laptop
+			color: #fff
+			border-right: none
+			z-index: 100
+	
+
+.sidebar__item--active
+	color: $accent
+	font-family: 'robotobold'
+	border-right-color: $accent
+	@include laptop
+		color: #fff
+		border-right: none
+		z-index: 100
+
+.wrap-menu 
+	position: relative
+	top: 0
+	@include laptop
+		height: 100vh
+		position: absolute
+		left: 0
+		width: 100%
+		box-shadow: 3px 0px 3px 0px rgba(0, 0, 0, 0.2)
+		background: $accent
+		z-index: 100
+		&:after
+			content: ''
+			display: block
+			width: 20px
+			height: 46px
+			border-radius: 100%
+			position: absolute
+			top: 50vh
+			transform: translateY(-50%)
+			right: -8px
+			background: $accent
+			box-shadow: 3px 0px 3px 0px rgba(0, 0, 0, 0.2)
+
+.wrap-menu.fixed 
+	left: 0
+	width: 30%
+	padding: 0 40px
+	@include laptop
+		width: 80%
+		padding-right: 20px
+		left: -80%
+
+.fixed 
+	position: fixed
+	top: 0
+	@include laptop
+		width: 100vh
+
+.content
 	float: right
 	width: 65%
 	text-align: left
@@ -38,27 +133,8 @@
 	padding: 0 20px
 	@include laptop
 		float: none
-		width: 100%
+		width: 100% 
 
-.sidebar-menu__link
-	display: block
-	text-decoration: none
-	color: $main-font-color
-	padding: 10px 20px 10px 0
-	font-size: 16px
-	font-family: 'robotoregular'
-	border-right: 2px solid transparent 
-	&:hover
-		color: $accent
-		font-family: 'robotobold'
-		border-right-color: $accent
-
-.item-active
-	.sidebar-menu__link
-		color: $accent
-		font-family: 'robotobold'
-		border-right-color: $accent
- 
 .article
 	border-bottom: 5px solid rgba(#373e42, .07)
 	padding: 50px 0
@@ -87,7 +163,7 @@
 	@include tablets
 		font-size: 14px
 
-.article__content
+.article__text
 	font-size: 16px
 	font-family: 'robotoregular'
 	color: $main-font-color

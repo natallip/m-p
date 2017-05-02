@@ -160,28 +160,21 @@
 	left: 30px
 	@include tablets
 		left: 10px
-    
-// .blur
-// 	position: relative
 
 .reviews
 	vertical-align: top
-	z-index: 100
-	position: absolute
-	top: 10px
-	left: 50%
-	transform: translateX(-50%)
-	width: 100%
-
+	margin-bottom: 50px
+	@include tablets
+		margin-bottom: 10px
+	
 .reviews__section-title
 	background:  url('../img/decor/about-header.png') no-repeat 50% 50%
 	background-size: contain
 	text-align: center
-	//width: 80%
 	margin: 0 auto
 	padding: 40px 0	
 	.title
-		width: 250px
+		width: 280px
 		@include tablets
 			width: auto
 
@@ -189,7 +182,7 @@
 	text-align: center
 	@include tablets
 		padding: 0 30px
-	
+		
 .review
 	display: inline-block
 	max-width: 350px
@@ -266,6 +259,7 @@
 	top: 0%
 	left: 50%
 	transform: translateX(-50%)
+
 	width: 380px
 	height: 440px
 	margin: 0 auto
@@ -311,8 +305,8 @@
 			background-color: rgba($accent-dark, .85)
 
 .blur
-	height: 100vh
-	height: 1140px
+	//height: 100vh
+	min-height: 1140px
 	position: relative
 	overflow: hidden
 
@@ -323,22 +317,24 @@
 	right: 0
 	//bottom: 0
 	min-width: 2000px
+	z-index: -1
 
 .blur__img
 	display: block
 	max-width: 100%
 
 .blur__form-wrapper
-	position: absolute
-	top: 50%
-	left: 50%
-	transform: translateX(-50%)
+	//position: absolute
+	//top: 50%
+	//left: 50%
+	//transform: translateX(-50%)
 	width: 380px
 	height: 440px
 	overflow: hidden
 	border-radius: 10px
 	position: relative
-	//border: 2px solid red
+	margin: 0 auto
+	margin-bottom: 80px
 	@include laptop
 		width: 346px
 		height: 430px
@@ -349,14 +345,10 @@
 .blur__form
 	width: 100%
 	height: 100%
-	background:  url('../img/content/water.jpg') no-repeat center 70%
+	background:  url('../img/content/water.jpg') no-repeat 
 	overflow: hidden
 	border-radius: 10px
-	//position: relative
 	filter: blur(20px)
 	background-size: 2000px 1140px
-	//border: 2px solid #000;
-
-	//background-position: -322px -152px
-
+	
 

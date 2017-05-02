@@ -1,5 +1,7 @@
 .section
 	min-height: 650px
+	@include tablets
+		height: auto
 	
 .about
 	background-image: linear-gradient(90deg, $white 50%, $beige 50%)
@@ -8,7 +10,7 @@
 	background: url("../img/bg/portfolio.jpg") no-repeat center
 	position: relative
 	height: 100vh
-	min-height: 650px
+	//min-height: 650px
 
 .hero__socials
 	padding: 20px 
@@ -480,8 +482,9 @@ footer
 		height: 220px
 		margin-top: -220px
 	@include tablets
-		height: 270px
-		margin-top: -270px
+		//height: 250px
+		//margin-top: -250px
+		//padding: 0 20px
 
 .footer
 	background: rgba($main-font-color, .85)
@@ -578,7 +581,7 @@ footer
 	@include laptop
 		height: 220px
 	@include tablets
-		height: 270px
+		//height: 250px
 		
 
 

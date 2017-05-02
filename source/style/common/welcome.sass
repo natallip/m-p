@@ -156,7 +156,7 @@
 
 .form__elem
 	display: flex
-	margin: 0 20px 25px
+	margin: 0 20px 20px
 	border-radius: 5px 
 	overflow: hidden
 	background-color: #fff
@@ -212,7 +212,7 @@
   
 .form__radio-hidden
 	&:checked
-		.form__elem-title
+		&+.form__elem-title
 			color: $accent
 		&+.form__radio-custom
 			&:before
@@ -225,6 +225,7 @@
 				right: 4px
 				background: $accent
 				border-radius: 50%
+
 
 .form__checkbox-hidden
 	display: none
@@ -252,7 +253,7 @@
 				padding: 1px 3px 4px
 				border-radius: 2px
 				overflow: hidden
-				
+						
 .form__elem-title
 	font-family: 'robotoregular'
 	font-size: 16px

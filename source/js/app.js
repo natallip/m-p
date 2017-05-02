@@ -65,10 +65,10 @@ else if ($("section").is(".works")) {
             style.webkitTransform = transformString;
 
         },
-    init: function (wScroll) {
-        this.move(bg, wScroll, 45);
-        this.move(sectionText, wScroll, 20);
-        this.move(user, wScroll, 3);
+        init: function (wScroll) {
+            this.move(bg, wScroll, 45);
+            this.move(sectionText, wScroll, 20);
+            this.move(user, wScroll, 3);
         }
     }
  }();
@@ -146,10 +146,92 @@ function blur() {
     parallax.init(wScroll);
  }
  })();    
-} 
 
+var scrollMenu = (function () {
+  var $article = $('.article'),
+    $item = $('.sidebar__item'),
+    $wrapMenu = $('.wrap-menu'),
+    body = document.body,
+    isPositionArticle = [],
+    offsetHeight = 200,
 
+    positionArticle = function (element) {
+      var len = element.length;
+      for (let i = 0; i < len; i++) {
+        isPositionArticle[i] = {};
+        isPositionArticle[i].top = element
+          .eq(i)
+          .offset()
+          .top - offsetHeight;
+        isPositionArticle[i].bottom = isPositionArticle[i].top + element
+          .eq(i)
+          .innerHeight();
+      }
+    },
 
+    scrollPageFixMenu = function (e) {
+      var scroll = window.pageYOffset;
+      if (scroll < $article.offset().top) {
+        $wrapMenu.removeClass('fixed');
+      } else {
+        $wrapMenu.addClass('fixed');
+      }
+    },
+
+    scrollPage = function (e) {
+      var scroll = window.pageYOffset;
+      for (let i = 0; i < isPositionArticle.length; i++) {
+        if (scroll >= isPositionArticle[i].top && scroll <= isPositionArticle[i].bottom) {
+          $item
+            .eq(i)
+            .addClass('sidebar__item--active')
+            .siblings()
+            .removeClass('sidebar__item--active');
+            //console.log(i);
+        }
+      }
+    },
+
+    clickOnMenu = function (e) {
+      var index = $(e.target).index();
+      var sectionOffset = $article
+        .eq(index)
+        .offset()
+        .top;
+      $(document).off('scroll', scrollPage);
+      $('body, html').animate({
+        'scrollTop': sectionOffset
+      }, function () {
+        $(e.target)
+          .addClass('sidebar__item--active')
+          .siblings()
+          .removeClass('sidebar__item--active');
+        $(document).on('scroll', scrollPage);
+      });
+    },
+    
+    addListener = function () {
+      $('.sidebar__menu').on('click', clickOnMenu);
+
+      $(document).on('scroll', scrollPage);
+      $(document).on('scroll', scrollPageFixMenu);
+
+      $(window).on('load', function (e) {
+        positionArticle($article);
+      })
+
+      $(window).on('resize', function (e) {
+        positionArticle($article);
+      })
+    }
+    
+  return {
+    init: addListener
+  }
+})();
+
+scrollMenu.init();
+}
 
 
 // about
@@ -359,30 +441,3 @@ google.maps.event.addDomListener(window, 'load', init);
 } 
 
 
-// login
- //else ($("form").is("#order-form")) {
-//     (function(){
-//      var parallaxContainer = document.getElementById('parallax'),
-//         layers = parallaxContainer.children;
-
-// var moveLayers = function (e) {
-//    // console.log(e);
-//     var initialX = (window.innerWidth / 2) - e.pageX,
-//         initialY = (window.innerHeight / 2) - e.pageY;
-
-// [].slice.call(layers).forEach(function (layer, i) {
-
-//     var divider = i/100,
-//         positionX = initialX * divider,
-//         positionY = initialY * divider,
-//         bottomPosition = (window.innerHeight / 2) * divider,
-//         layerStyle = layer.style,
-//         transformString = 'translate3d(' + positionX + 'px, ' + positionY + 'px, 0)';
-
-//  layerStyle.transform = transformString;
-//  layerStyle.bottom = '-' + bottomPosition + 'px';
-// });
-// }
-// window.addEventListener('mousemove', moveLayers);
-// })();
-//};
