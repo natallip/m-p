@@ -1,26 +1,62 @@
 .section
 	min-height: 650px
+	@include tablets
+		height: auto
+	
+.about
+	background-image: linear-gradient(90deg, $white 50%, $beige 50%)
 	
 .hero
 	background: url("../img/bg/portfolio.jpg") no-repeat center
-	overflow: hidden
 	position: relative
-	&__socials
-		padding: 20px 
-		width: 30%
-		margin: 0
-	&__hamburger
-		position: absolute
-		top: 20px
-		right: 40px
-	&__bg
-		position: absolute
-		top: 0
-		left: 0
-	&__down-arrow
-		bottom: 40px
-		z-index: 15
-		@include centered(x)
+	height: 100vh
+	//min-height: 650px
+
+.hero__socials
+	padding: 20px 
+	width: 40%
+	margin: 0
+	@include tablets
+		padding: 12px
+		width: 50%
+
+.hero__hamburger
+	position: absolute
+	top: 0px
+	right: 0px
+	width: 40px
+	height: 40px
+	//@include tablets
+		//top: 10px
+		//right: 10px
+
+.hero__bg
+	position: absolute
+	top: 0
+	left: 0
+	right: 0
+	height: 1270px
+
+.hero__section
+	@include centered(y)
+	left: 0
+	right: 0
+	text-align: center
+
+.hero__user
+	@include centered(y)
+	left: 0
+	right: 0
+	text-align: center
+
+.hero__bg-img
+	display: block
+	//max-width: 100%
+
+.hero__down-arrow
+	bottom: 40px
+	z-index: 15
+	@include centered(x)
 
 .socials__link
 	display: block
@@ -28,6 +64,10 @@
 	height: 30px
 	vertical-align: bottom
 	opacity: .5
+	background-size: cover
+	@include tablets
+		width: 25px
+		height: 20px
 	&:hover
 		opacity: .99
 	&_vk
@@ -39,42 +79,51 @@
 
 .socials__item
 	display: inline-block
-	margin-right: 5px
+	margin-right: 10px
 
-.nav
-	width: 40px
-	height: 35px
-
-.nav__link
+.hamburger
 	display: block
 	width: 100%
 	height: 100%
-	
-.nav__toggle 
-	display: block
-	width: 40px
-	height: 5px
-	background-color: #fff
-	border-radius: 5px
-	margin: 10px 0
-	//position: relative
+	z-index: 100
+	&:hover
+		cursor: pointer
+	position: absolute
+	top: 20px
+	right: 40px
+	@include tablets
+		top: 10px
+		right: 10px
 
-.nav__link:before
-	content: ''
-	display: block
+.hamburger__line
 	width: 40px
 	height: 5px
 	background-color: #fff
 	border-radius: 5px
+	margin: 7px 0
+	transition: all 0.3s ease-in-out
+	@include tablets
+		height: 3px
+		margin: 4px 0
+		width: 26px
 	
-.nav__link:after
-	content: ''
-	display: block
-	width: 40px
-	height: 5px
-	background-color: #fff
-	border-radius: 5px
-	
+.active 
+	.hamburger__line:nth-child(2)
+		opacity: 0
+	.hamburger__line:nth-child(1)
+		transform: translateY(12px) rotate(45deg)
+		background: #fff
+		@include tablets
+			transform: translateY(7px) rotate(45deg)
+	.hamburger__line:nth-child(3)
+		transform: translateY(-12px) rotate(-45deg)
+		background: #fff
+		@include tablets
+			transform: translateY(-7px) rotate(-45deg)
+
+.user-block
+	display: inline-block
+
 .user 
 	text-align: center
 
@@ -110,7 +159,6 @@
 	.user__desc
 		color: rgba(#fff, .8)
 
-
 .down-arrow 
 	opacity: .7
 	&:hover
@@ -118,68 +166,114 @@
 
 .section__title 
 	display: inline-block
-	@include centered(x)
-
+	@include laptop
+		display: none
 
 .about 
 	@extend %clearfix
-	&__left
-		float: left
-		width: 50%
-		position: relative
-		background: $white
-	&__right
-		float: right
-		width: 50%
-		position: relative 
-		background: $beige
-	&__triangles 
-		position: absolute
-		bottom: 100%
+	position: relative
 
-.about__triangles
+.about__left
+	float: left
+	width: 50%
+	position: relative
+	background: $white
+	@include laptop
+		float: none
+		width: 100%
+	
+.about__right
+	float: right
+	width: 50%
+	position: relative 
+	background: $beige
+	@include laptop
+		float: none
+		width: 100%
+
+.about__triangle
 	position: absolute
 	bottom: 100%
+	width: 100%
+	font-size: 0
+
+.about__triangle-left
+	display: inline-block
+	font-size: 0
+	width: 50%
+	
+.about__triangle-right	
+	display: inline-block
+	font-size: 0
+	width: 50%
 
 .triangle 
 	height: 100px
 	width: 100%
 	z-index: 10
+	@include desktop
+		height: 70px
+	@include tablets
+		height: 30px
 	&_fill 
 		&_white 
 			fill: $white
 		&_beige 
 			fill: $beige
+			@include laptop
+				fill: $white
 
-.about
-	@extend %clearfix
-	&__left-title
-		float: left
-		width: 50%
-		padding: 0 20px
-	&__left-user
-		float: right
-		width: 50%
-		padding: 20px
+.about__left-title
+	float: left
+	width: 50%
+	padding: 0 20px
+	@include desktop
+		float: none
+		width: 100%
 
+.about__left-user
+	float: right
+	width: 50%
+	padding: 20px
+	padding-bottom: 30px
+	@include desktop
+		float: none
+		width: 100%
+		margin: 0 auto
+	@include tablets
+		padding-bottom: 10px
+	
 .about-data__description
 	margin-bottom: 30px
+	@include tablets
+		margin-bottom: 10px
 
 .about__section-title
 	background: url('../img/decor/about-header.png') no-repeat 50% 50%
-	background-size: cover
-		
+	background-size: contain
+	padding-top: 20px
+	padding-bottom: 26px
+	//@include centered(x)
+	text-align: center
+			
 .title 
 	color: $title-color
 	font-size: 63px
+	line-height: 66px
 	font-family: 'bernier_regularregular'
 	display: inline-block
-	@include centered(x)
+	//@include centered(x)
 	position: relative
 	background-size: contain
 	background-position: center center
 	background-repeat: no-repeat
 	text-align: center
+	white-space: pre-line
+	@include laptop
+		font-size: 49px
+	@include tablets
+		font-size: 35px
+		line-height: 42px
 	
 	&:after, &:before 
 		content: ""
@@ -193,46 +287,104 @@
 	&:before 
 		left: -40px
 
+.user-about
+	@include desktop
+		margin: 0	auto
+
 .user-about__picture
 	max-width: 443px
 	max-height: 390px
 	margin-bottom: 40px
+	@include desktop
+		margin: 0	auto
+		margin-bottom: 30px 
+	@include tablets
+		max-width: 300px
+		height: auto
+		margin-bottom: 0
 
 .title--subtitle
 	font-size: 35px
 	color: $main-font-color
-	margin-bottom: 30px
+	@include centered(x)
+	position: relative
+	margin-bottom: 25px
 	text-align: center
-	
+	@include laptop
+		font-size: 30px
+		margin-bottom: 15px
+	@include tablets
+		//margin-bottom: 0
+		font-size: 21px
+		//margin-bottom: 10px
+		padding-top: 10px
+
+.about-user-info__text
+	@include laptop
+		width: 60%
+		min-width: 600px
+		margin: 0 auto
+	@include tablets
+		min-width: 300px
+
+.user-about__text
+	@include laptop
+		width: 60%
+		min-width: 600px
+		margin: 0 auto
+	@include tablets
+		min-width: 320px
+		
 .text
 	p
 		color: $main-font-color
 		font-size: 16px
 		font-family: 'robotoregular'
 		margin-bottom: 14px
+		@include laptop
+			font-size: 14px
+
 	
 .about-data
 	padding: 20px
 	padding-left: 30px
+	@include laptop 
+		padding-right: 10px
+	@include tablets
+		padding-left: 10px
+		padding-top: 10px
 	
 .about-data__skills
-	padding-bottom: 60px
+	padding-bottom: 50px
+	@include laptop
+		width: 60%
+		min-width: 600px
+		margin: 0 auto
+		text-align: center
+		padding-bottom: 10px
+	@include tablets
+		min-width: 300px
+		padding-bottom: 0
 
 .skills
 	display: block
 
 .skills-section__list
 	margin-bottom: 30px
+	@include tablets
+		margin-bottom: 0
 
 .skills__item-name
 	font-family: 'robotomedium'
 	font-size: 28px
 	color: $main-font-color
-	margin-bottom: 15px
+	margin-bottom: 12px
 
 .skills-section__item
 	display: inline-block
 	margin-right: 14px
+	@include tablets
+		margin-bottom: 10px
 
 .skill
 	width: 120px
@@ -240,31 +392,45 @@
 	border: 20px solid rgb(223, 220, 213)
 	border-radius: 50%
 	position: relative
-	&__circle
-		width: 80px
-		height: 80px
-	&__name
-		position: absolute
-		top: 0
-		left: 0
-		@include centered(both)
-		color: $accent
-		font-family: 'robotomedium'
-		font-size: 14px
-		max-width: 67px
-		word-wrap: break-word
+	@include laptop 
+		width: 110px
+		height: 110px
+
+.skill__circle
+	width: 80px
+	height: 80px
+	
+.skill__name
+	position: absolute
+	top: 0
+	left: 0
+	@include centered(both)
+	color: $accent
+	font-family: 'robotomedium'
+	font-size: 14px
+	max-width: 67px
+	word-wrap: break-word
+	@include laptop 
+		font-size: 13px
 
 .map
 	position: relative
 	
 .map__container
 	width: 100%
-	height: 1075px
+	height: 930px
+	@include desktop 
+		height: 830px
+	@include laptop
+		height: 650px
 	
 .map__contacts
 	position: absolute
 	z-index: 10
 	@include centered(both)
+	@include tablets
+		top: 0
+		transform: translateX(-50%)
 
 .contacts
 	border-radius: 5px
@@ -272,6 +438,12 @@
 	opacity: .85
 	width: 380px
 	padding: 25px 40px
+	@include laptop
+		width: 350px
+		padding: 20px
+	@include tablets
+		width: 320px
+		padding: 20px 10px
 
 .contacts__title
 	margin-bottom: 30px
@@ -281,7 +453,9 @@
 
 .title--small
 	font-size: 35px
-	margin-bottom: 20px
+	margin-bottom: 12px
+	@include centered(x)
+	position: relative
  
 .contacts__link
 	display: block
@@ -304,38 +478,71 @@ footer
 	margin-top: -148px
 	z-index: 10
 	position: relative
+	@include laptop
+		height: 220px
+		margin-top: -220px
+	@include tablets
+		//height: 250px
+		//margin-top: -250px
+		//padding: 0 20px
 
 .footer
 	background: rgba($main-font-color, .85)
-	&__left
-		float: left
-		width: 50%
-		padding: 18px 0
-	&__right	
-		float: right
-		width: 50%
-		text-align: right
-		padding: 18px 0
-	&__line
-		@extend %clearfix
-		display: block
-		padding: 10px 20pxx 
-		border-bottom: 1px solid rgba(#fff, .1)	
-		&:last-child
-			border-bottom-color: transparent
+	
+.footer__left
+	float: left
+	width: 50%
+	padding: 18px 0
+	@include laptop
+		float: none
+		width: 100%
+		margin: 0 auto
+		padding: 10px 0 0
+
+.footer__right	
+	float: right
+	width: 50%
+	text-align: right
+	padding: 18px 0
+	@include laptop
+		float: none
+		width: 100%
+		margin: 0 auto
+		padding: 0 0 10px
+
+.footer__line
+	@extend %clearfix
+	border-bottom: 1px solid rgba(#fff, .1)	
+	&:last-child
+		border-bottom-color: transparent
 
 .footer
-	.menu__item
-		border-right-width: 0
-		&:hover
-			.menu__link
-				color: $accent
-				background-color: transparent
-				text-align: left
+	@include laptop
+		text-align: center
+	.menu
+		.menu__item
+			border-right-width: 0
+			&:hover
+				.menu__link
+					color: $accent
+					background-color: transparent
+					text-align: left
+
+.footer
+	.menu__link
+		@include tablets
+				padding: 10px 5px
+
+.footer
+	.socials
+		@include laptop
+			text-align: center
 
 .menu__item
 	display: inline-block
 	margin-right: 10px
+	@include tablets
+		margin-right: 5px
 
 .menu__link
 	display: block
@@ -343,6 +550,8 @@ footer
 	color: #fff	
 	font-size: 16px
 	font-family: 'robotomedium'
+	@include tablets
+		font-size: 13px
 
 .footer__about-me
 	font-family: 'robotolight'
@@ -351,6 +560,10 @@ footer
 	padding: 10px 20px
 	span
 		padding-top: 20px
+	@include laptop
+		text-align: center
+	@include tablets
+		font-size: 13px
 	
 .footer__socials
 	padding-top: 5px
@@ -365,5 +578,10 @@ footer
 	content: ''
 	display: block
 	height: 148px
+	@include laptop
+		height: 220px
+	@include tablets
+		//height: 250px
+		
 
 

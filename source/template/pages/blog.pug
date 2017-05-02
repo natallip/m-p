@@ -14,13 +14,32 @@ block content
         li.socials__item
           a(href="#" class=`socials__link socials__link_${item}`)
 
-    a(href="").hamburger.hero__hamburger
+    .hero__hamburger
+    
+      .hamburger#toggle
+        .hamburger__line
+        .hamburger__line
+        .hamburger__line
+
+      .overlay#overlay
+        nav.overlay__menu
+          ul.overlay__menu-list
+            li.overlay__menu-item
+              a.overlay__menu-link(href="works.html") Мои работы
+            li.overlay__menu-item
+              a.overlay__menu-link(href="about.html") Обо мне
+            li.overlay__menu-item
+              a.overlay__menu-link(href="blog.html") Блог
+            li.overlay__menu-item
+              a.overlay__menu-link(href="login.html") Авторизация
 
     //a(href="").down-arrow.hero__down-arrow
       //img(src="assets/img/icons/svg/arrow_down.svg", alt="").down-arrow__icon
+
+    .hero__section
+      img(src="assets/img/decor/blog-header.png", alt="").section__title.section__title--blog 
     
-    .section__user-block
-      img(src="assets/img/decor/blog-header.png", alt="").section__title.section__title--blog
+    .hero__user
       .user-block.user-blok--transparent
         .user__photo-wrap
           .user__photo
@@ -30,39 +49,37 @@ block content
         .user__desc Статьи, которые я написала
 
   section.section.blog
-    .about__left
-      svg(
-        viewbox="0 0 1000 100" 
-        preserveAspectRatio="none"
-        class="triangle triangle_fill_fff about__triangles")
-        polygon(points="0,0 0,100 1000,100")
-    .about__right
-      svg(
-        viewbox="0 0 1000 100" 
-        preserveAspectRatio="none"
-        class="triangle triangle_fill_fff about__triangles")
-        polygon(points="0,100 1000,100 1000,0")
-
-    .blog__left
-      ul.sidebar-menu
-        li.sidebar-menu__item.item-active
-          a(href="").sidebar-menu__link
-            | Самое важное о SASS
-        li.sidebar-menu__item
-          a(href="").sidebar-menu__link
+    .about__triangle
+      .about__triangle-left
+        svg(
+          viewbox="0 0 1000 100" 
+          preserveAspectRatio="none"
+          class="triangle triangle_fill_fff about__triangles")
+          polygon(points="0,0 0,100 1000,100")
+      .about__triangle-right
+        svg(
+          viewbox="0 0 1000 100" 
+          preserveAspectRatio="none"
+          class="triangle triangle_fill_fff about__triangles")
+          polygon(points="0,100 1000,100 1000,0")
+   
+    aside.sidebar
+      .wrap-menu
+        ul.sidebar__menu
+          li.sidebar__item.sidebar__item--active 
+            |Самое важное о SASS
+          li.sidebar__item
             | Приемы в верстке, без которых не обходится не один сайт
-        li.sidebar-menu__item
-          a(href="").sidebar-menu__link
+          li.sidebar__item
             | Необходимый набор Gulp плагинов
-        li.sidebar-menu__item
-          a(href="").sidebar-menu__link
+          li.sidebar__item
             | Почему я выбрал Jade
 
-    .blog__right
-      .article
+    main.content
+      article.article
         .article__title Самое важное в SASS
         .article__data 22 ноября 2016
-        .article__content 
+        .article__text 
           p.
             Таким образом начало повседневной работы по формированию позиции позволяет выполнять важные задания по разработке направлений прогрессивного развития. Разнообразный и богатый опыт новая модель организационной деятельности играет важную роль в формировании новых предложений. Товарищи! новая модель организационной деятельности играет важную роль в формировании систем массового участия.
           p.
@@ -70,10 +87,26 @@ block content
         
           img(src="assets/img/content/example.jpg" alt="")
 
-      .article
+      article.article
         .article__title Приёмы в вёрстке, без которых не обходится ни один сайт
         .article__data 13 ноября 2016
-        .article__content
+        .article__text
+          p.
+            Таким образом начало повседневной работы по формированию позиции позволяет выполнять важные задания по разработке направлений прогрессивного развития. Разнообразный и богатый опыт новая модель организационной деятельности играет важную роль в формировании новых предложений. Товарищи! новая модель организационной деятельности играет важную роль в формировании систем массового участия.
+          p.
+            Не следует, однако забывать, что укрепление и развитие структуры обеспечивает широкому кругу (специалистов) участие в формировании систем массового участия. Идейные соображения высшего порядка, а также рамки и место обучения кадров обеспечивает широкому кругу (специалистов) участие в формировании позиций, занимаемых участниками в отношении поставленных задач. Товарищи! постоянный количественный рост и сфера нашей активности способствует подготовки и реализации модели развития. С другой стороны рамки и место обучения кадров влечет за собой процесс внедрения и модернизации системы обучения кадров, соответствует насущным потребностям.
+      article.article
+        .article__title Приёмы в вёрстке, без которых не обходится ни один сайт
+        .article__data 13 ноября 2016
+        .article__text
+          p.
+            Таким образом начало повседневной работы по формированию позиции позволяет выполнять важные задания по разработке направлений прогрессивного развития. Разнообразный и богатый опыт новая модель организационной деятельности играет важную роль в формировании новых предложений. Товарищи! новая модель организационной деятельности играет важную роль в формировании систем массового участия.
+          p.
+            Не следует, однако забывать, что укрепление и развитие структуры обеспечивает широкому кругу (специалистов) участие в формировании систем массового участия. Идейные соображения высшего порядка, а также рамки и место обучения кадров обеспечивает широкому кругу (специалистов) участие в формировании позиций, занимаемых участниками в отношении поставленных задач. Товарищи! постоянный количественный рост и сфера нашей активности способствует подготовки и реализации модели развития. С другой стороны рамки и место обучения кадров влечет за собой процесс внедрения и модернизации системы обучения кадров, соответствует насущным потребностям.
+      article.article
+        .article__title Приёмы в вёрстке, без которых не обходится ни один сайт
+        .article__data 13 ноября 2016
+        .article__text
           p.
             Таким образом начало повседневной работы по формированию позиции позволяет выполнять важные задания по разработке направлений прогрессивного развития. Разнообразный и богатый опыт новая модель организационной деятельности играет важную роль в формировании новых предложений. Товарищи! новая модель организационной деятельности играет важную роль в формировании систем массового участия.
           p.

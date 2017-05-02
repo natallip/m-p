@@ -30,3 +30,19 @@
     display: block
     clear: both
   
+@mixin desktop               // 1200
+  @media (max-width: 1800px)  
+    @content
+
+@mixin laptop                 // ipad
+   @media (max-width: 1200px)  
+     @content
+
+@mixin tablets                // iphone
+  @media (max-width: 768px)  
+    @content
+
+@mixin phones
+  @media (max-width: 320px)  
+    @content
+
