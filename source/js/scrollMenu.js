@@ -50,6 +50,13 @@
 //         .eq(index)
 //         .offset()
 //         .top;
+
+
+//       if ($wrapMenu.hasClass('fixed')) {
+//           $('.sidebar__menu').show();
+//           console.log(1);
+//       };
+
 //       $(document).off('scroll', scrollPage);
 //       $('body, html').animate({
 //         'scrollTop': sectionOffset
@@ -60,16 +67,19 @@
 //           .removeClass('sidebar__item--active');
 //         $(document).on('scroll', scrollPage);
 //       });
+
 //       if($wrapMenu.hasClass('overlay-sidebar')) {
         
 //         $wrapMenu.animate({
-//             'left' : -80 + '%'}, 200);
-//         $('.sidebar__toggle').animate({
-//             'left' : -10 + 'px'}, 0)
+//             'left' : -80 + '%'}, 300);
+//         toggle.animate({
+//             'left' : -10 + 'px'}, 300)
 //         };
+
 //     },
     
 //     addListener = function () {
+      
 //       $('.sidebar__menu').on('click', clickOnMenu);
 
 //       $(document).on('scroll', scrollPage);
@@ -82,37 +92,49 @@
 //       $(window).on('resize', function (e) {
 //         positionArticle($article);
 //       })
+
 //     },
 
 //     addListenerOnToggle = function () {
-//         $('.sidebar__toggle').on('click', function () {
+//         toggle.on('click', function () {
 //             $wrapMenu.removeClass('fixed')
 //             .addClass('overlay-sidebar')
 //             .animate({
-//             'left' : 0 + '%'}, 200);
+//             'left' : 0 + '%'}, 300);
+
+//             $('.sidebar__menu').show();  
            
-//         $('.sidebar__toggle').animate({
-//             'left' : 79 + '%'}, 0)
+//         toggle.animate({
+//             'left' : 79 + '%'}, 300)
 //             });
        
 //         $(document).on('click', function(e) {
 //             if ($(e.target).closest('.overlay-sidebar').length) return;
 //             $('.overlay-sidebar').animate({
-//                 'left' : -80 + '%'}, 200);
-           
-//             $('.sidebar__toggle').animate({
+//                 'left' : -80 + '%'}, 0);
+               
+                 
+//             toggle.animate({
 //                 'left' : -10 + 'px'}, 0);
 //             e.stopPropagation();
+
+//             $wrapMenu.removeClass('overlay-sidebar')
+//             .addClass('fixed')
+//             .animate({
+//             'left' : 0 + '%'}, 300);
+
+//             $('.sidebar__menu').hide();
+                       
 //             });
-//     }
+
+//     };
+
+
 //   return {
 //     init: addListener,
 //     initToggle: addListenerOnToggle
 //   }
-// // scrollMenu.init();
-// // scrollMenu.initToggle(); 
 // })();
-
 
 
 

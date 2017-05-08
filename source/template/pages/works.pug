@@ -157,7 +157,8 @@ block content
       .blur__form-wrapper
         .blur__form
 
-        form(action="submit.php" method="POST" class="form-contact" id="contact-form")
+        //form(action="submit.php" method="POST" class="form-contact" id="contact-form")
+        form(role="form" class="form-contact form" id="contact-form")
       
           .title.title--subtitle
             | Связаться со мной
@@ -184,14 +185,13 @@ block content
         .status-popup__inner
           .status-popup__message.success-message
             | Сообщение отправлено
-          a(href="").status-popup__close.btn Закрыть
+          a(href="").status-popup__close X
                  
       .status-popup#error
         .status-popup__inner
           .status-popup__message.error-message
             | Произошла ошибка
-          a(href="").status-popup__close.btn Закрыть
-                  
+          a(href="").status-popup__close X           
 
       a(href="#up").down-arrow.reviews__down-arrow
         img(src="assets/img/icons/svg/arrow_down.svg", alt="").down-arrow__icon

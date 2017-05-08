@@ -77,14 +77,11 @@
 .wrap-menu 
 	position: relative
 	top: 0
+	left: 0   /////////////////
 	@include laptop
 		width: 80%
 		position: fixed
 		left: -80%
-
-		// background: $accent
-		// z-index: 100
-		// box-shadow: 3px 0px 3px 0px rgba(0, 0, 0, 0.2)
 
 .sidebar__toggle
 	display: none
@@ -96,7 +93,6 @@
 		position: fixed
 		top: 50%
 		transform: translateY(-50%)
-		//right: -8px
 		background: $accent
 		box-shadow: 3px 0px 3px 0px rgba(0, 0, 0, 0.2)
 		z-index: 100
@@ -114,6 +110,7 @@
 .fixed 
 	position: fixed
 	top: 0
+	display: block
 	
 .overlay-sidebar
 	@include laptop
@@ -123,7 +120,6 @@
 		background: $accent
 		box-shadow: 3px 0px 3px 0px rgba(0, 0, 0, 0.2)
 		z-index: 100
-		//left: -5px
 		padding: 0
 	
 .content
