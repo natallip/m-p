@@ -1,3 +1,67 @@
+.preloader 
+	position: fixed
+	top: 0
+	left: 0
+	right: 0
+	bottom: 0
+	z-index: 9999
+	background: #20b5a1
+
+.preloader__spinner 
+	width: 150px
+	height: 150px
+	position: absolute
+	top: 50%
+	left: 50%
+	transform: translate(-50%, -50%)
+
+.preloader__percents 
+	position: absolute
+	top: 50%
+	left: 50%
+	transform: translate(-50%, -50%)
+	color: #fff
+
+.preloader__animation 
+	width: 150px
+	height: 150px
+	position: relative
+	animation: spin 10s linear infinite
+
+.preloader__animation, .preloader__animation:before, .preloader__animation:after 
+	content: ""
+	display: block
+	position: absolute
+	border: 3px solid transparent
+	border-top-color: #fff
+	border-radius: 50%
+
+.preloader__animation:before 
+	top: 13px
+	left: 13px
+	right: 13px
+	bottom: 13px
+	animation: spin 7s linear infinite
+
+.preloader__animation:after 
+	top: 5px
+	left: 5px
+	right: 5px
+	bottom: 5px
+	animation: spin 12s linear infinite
+
+@-webkit-keyframes spin 
+	from 
+		transform: rotate(0deg)
+	to 
+		transform: rotate(360deg)
+
+@keyframes spin 
+	from 
+		transform: rotate(0deg)
+	to 
+		transform: rotate(360deg)
+
 .welcome__parallax
 	overflow: hidden
 	width: 100%
@@ -338,7 +402,14 @@
 .front 
 	z-index: 2
 	transform: rotateY(0deg)
+	animation: slideDown 2s linear
 
 .back 
 	transform: rotateY(180deg)
 
+@keyframes slideDown 
+  0% 
+    top: -100px
+  100% 
+    top: 0
+  

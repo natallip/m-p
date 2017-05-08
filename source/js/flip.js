@@ -1,5 +1,5 @@
 // flip
-var flip = function () {        
+let flip = function () {        
   
 $('#btn').on('click', function (e) {
     e.preventDefault; 
@@ -8,3 +8,4 @@ $('#btn').on('click', function (e) {
 })
 };
 
+export {flip};

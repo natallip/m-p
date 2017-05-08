@@ -1,10 +1,14 @@
  // map
-var map = // map
-(function(){
-google.maps.event.addDomListener(window, 'load', init);
-    var map, markersArray = [];
+//let map = (function(){
+// google.maps.event.addDomListener(window, 'load', init);
+
+//     var map, markersArray = [];
 
     function bindInfoWindow(marker, map, location) {
+google.maps.event.addDomListener(window, 'load', init);
+
+    var map, markersArray = [];
+
         google.maps.event.addListener(marker, 'click', function() {
             function close(location) {
                 location.ib.close();
@@ -160,5 +164,6 @@ google.maps.event.addDomListener(window, 'load', init);
             }
         }
     }
-})();
+// })();
 
+export {bindInfoWindow, init};

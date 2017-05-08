@@ -6,6 +6,7 @@ block variables
     
 block content
   section.section.hero
+    a(href="", id="up")
     .hero__bg
       img(src="assets/img/bg/portfolio.jpg", alt="").hero__bg-img
 
@@ -33,8 +34,7 @@ block content
             li.overlay__menu-item
               a.overlay__menu-link(href="login.html") Авторизация
 
-
-    a(href="").down-arrow.hero__down-arrow
+    a(href="#down").down-arrow.hero__down-arrow
       img(src="assets/img/icons/svg/arrow_down.svg", alt="").down-arrow__icon
     
     .hero__section
@@ -44,7 +44,7 @@ block content
       .user-block.user-blok--transparent
         .user__photo-wrap
           .user__photo
-            img(src="assets/img/content/avatar-small.jpg", alt="").photo-avatar
+            img(src="assets/img/content/myphoto-small.jpg", alt="").photo-avatar
         .user__name.user__name--big Наталия Петкевич
         .user__desc Личный сайт веб-разработчика
 
@@ -63,72 +63,64 @@ block content
           class="triangle triangle_fill_beige about__triangles")
           polygon(points="0,100 1000,100 1000,0")
 
+    a(href="" id="down")
     .works__title
       .works__section-title
         .title
           | Мои работы
 
-    .slider.works__slider
-      .slider
-        .slider__controls
+    .works__slider.slider-wrapper
+      .slider-container
+        .slider
+          .slider__controls
             a(href="#").slider__btn.slider__btn--next
               i.icon-chevron-right
             a(href="#").slider__btn.slider__btn--prev
               i.icon-chevron-left
-
-        .slider__nav
-          ul.slider__btn-list
-            li.slider__btn
-              a(href="").slider__btn-link
-            li.slider__btn
-              a(href="").slider__btn-link
-            li.slider__btn
-              a(href="").slider__btn-link
-            li.slider__btn
-              a(href="").slider__btn-link
-
-        .slider__wrap
-          ul.slider__list
-            li.slider__item.slider_item--active
-              .slider__photo
-                img(src="assets/img/slider/work-1.png", alt="").photo-slider
-              .slider__descr.descr
-                .descr__title Сайт школы онлайн Образования
-                .descr__technology HTML , CSS, JAVASCRIPT
-                .descr__site
-                  a(href="#").decsr__btn 
-                    i.icon-link
-                    span Посмотреть сайт
-            li.slider__item.slider_item--active
-              .slider__photo
-                img(src="assets/img/slider/work-2.png", alt="").photo-slider
-              .slider__descr.descr
-                .descr__title Сайт школы онлайн Образования
-                .descr__technology HTML , CSS, JAVASCRIPT
-                .descr__site
-                  a(href="#").decsr__btn 
-                    i.icon-link
-                    span Посмотреть сайт
-            li.slider__item.slider_item--active
-              .slider__photo
-                img(src="assets/img/slider/work-3.png", alt="").photo-slider
-              .slider__descr.descr
-                .descr__title Сайт школы онлайн Образования
-                .descr__technology HTML , CSS, JAVASCRIPT
-                .descr__site
-                  a(href="#").decsr__btn 
-                    i.icon-link
-                    span Посмотреть сайт
-            li.slider__item.slider_item--active
-              .slider__photo
-                img(src="assets/img/slider/work-4.png", alt="").photo-slider
-              .slider__descr.descr
-                .descr__title Сайт школы онлайн Образования
-                .descr__technology HTML , CSS, JAVASCRIPT
-                .descr__site
-                  a(href="#").decsr__btn 
-                    i.icon-link
-                    span Посмотреть сайт
+                                
+          .slider__images
+            ul.slider__list
+              li.slider__item.active
+                .slider__photo
+                  img(src="assets/img/slider/work-1.png", alt="").photo-slider
+                .slider__descr.descr
+                  .descr__title Сайт школы онлайн Образования
+                  .descr__technology HTML , CSS, JAVASCRIPT
+                  .descr__site
+                    a(href="#").decsr__btn 
+                      i.icon-link
+                      span Посмотреть сайт
+              li.slider__item
+                .slider__photo
+                  img(src="assets/img/slider/work-2.png", alt="").photo-slider
+                .slider__descr.descr
+                  .descr__title Сайт школы онлайн Образования
+                  .descr__technology HTML , CSS, JAVASCRIPT
+                  .descr__site
+                    a(href="#").decsr__btn 
+                      i.icon-link
+                      span Посмотреть сайт
+              li.slider__item
+                .slider__photo
+                  img(src="assets/img/slider/work-3.png", alt="").photo-slider
+                .slider__descr.descr
+                  .descr__title Сайт школы онлайн Образования
+                  .descr__technology HTML , CSS, JAVASCRIPT
+                  .descr__site
+                    a(href="#").decsr__btn 
+                      i.icon-link
+                      span Посмотреть сайт
+              li.slider__item
+                .slider__photo
+                  img(src="assets/img/slider/work-4.png", alt="").photo-slider
+                .slider__descr.descr
+                  .descr__title Сайт школы онлайн Образования
+                  .descr__technology HTML , CSS, JAVASCRIPT
+                  .descr__site
+                    a(href="#").decsr__btn 
+                      i.icon-link
+                      span Посмотреть сайт
+            ul.slider__dots
     
 
   section.section
@@ -165,25 +157,43 @@ block content
       .blur__form-wrapper
         .blur__form
 
-        form(action="mail.php" method="POST" class="form-contact" id="contact-form")
+        form(action="submit.php" method="POST" class="form-contact" id="contact-form")
       
           .title.title--subtitle
             | Связаться со мной
 
+          //p.msgs
+
           label(class="form__elem" for="name")
-            input(class="form__elem-input" type="text" id="name" name="name" placeholder="Имя")
+            input(class="form__elem-input" type="text" id="name" name="name" placeholder="Имя" required)
 
           label(class="form__elem" for="email")
-            input(class="form__elem-input" type="text" id="email" name="email" placeholder="Email")
+            input(class="form__elem-input" type="text" id="email" name="email" placeholder="Email" required)
 
-          textarea(class="form__textarea form__elem" id="comment" name="comment" cols="42" rows="7" placeholder="Ваше сообщение")
+          textarea(class="form__textarea form__elem" id="message" name="message" cols="42" rows="7" placeholder="Ваше сообщение" required)
+
+          //input(name="formInfo" class="formInfo" type="hidden" value="форма: Связаться со мной")
                      
           .user__line-green
-            a(href="index.html").form__elem-main.form-menu__item На главную
-                  
+
+            input(type="submit" id="submit" name="submit" value="Отправить").form__elem-submit.form-menu__item
+                   
             input(type="reset" id="reset" name="reset" value="Очистить").form__elem-reset.form-menu__item
 
-      a(href="").down-arrow.reviews__down-arrow
+      .status-popup#success
+        .status-popup__inner
+          .status-popup__message.success-message
+            | Сообщение отправлено
+          a(href="").status-popup__close.btn Закрыть
+                 
+      .status-popup#error
+        .status-popup__inner
+          .status-popup__message.error-message
+            | Произошла ошибка
+          a(href="").status-popup__close.btn Закрыть
+                  
+
+      a(href="#up").down-arrow.reviews__down-arrow
         img(src="assets/img/icons/svg/arrow_down.svg", alt="").down-arrow__icon
 
             

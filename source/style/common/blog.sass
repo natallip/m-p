@@ -29,34 +29,22 @@
 	min-height: 1px
 	@include laptop
 		width: 80%
-		position: absolute
 		left: 0
-		//background: $accent
+		position: fixed
+		padding: 0 
 		height: 100vh
-		// box-shadow: 3px 0px 3px 0px rgba(0, 0, 0, 0.2)
-		// &:after
-		// 	content: ''
-		// 	display: block
-		// 	width: 20px
-		// 	height: 46px
-		// 	border-radius: 100%
-		// 	position: absolute
-		// 	top: 50vh
-		// 	transform: translateY(-50%)
-		// 	right: -8px
-		// 	background: $accent
-		// 	box-shadow: 3px 0px 3px 0px rgba(0, 0, 0, 0.2)
-			
+		box-shadow: 3px 0px 3px 0px rgba(0, 0, 0, 0.2)
+		z-index: 100
 
 .sidebar__menu
 	padding-top: 20px
 	@include laptop
 		position: absolute
-		top: 50vh
+		top: 50%
 		transform: translateY(-50%)
-		width: 90%
-
-		
+		width: 100%
+		min-height: 1px
+				
 .sidebar__item
 	color: $main-font-color
 	padding: 10px 20px 10px 10px
@@ -67,6 +55,7 @@
 	@include laptop
 		color: rgba(#fff, .8)
 		border-right: none
+		position: relative
 	&:hover
 		color: $accent
 		font-family: 'robotobold'
@@ -76,7 +65,6 @@
 			border-right: none
 			z-index: 100
 	
-
 .sidebar__item--active
 	color: $accent
 	font-family: 'robotobold'
@@ -90,41 +78,54 @@
 	position: relative
 	top: 0
 	@include laptop
-		height: 100vh
-		position: absolute
-		left: 0
-		width: 100%
-		box-shadow: 3px 0px 3px 0px rgba(0, 0, 0, 0.2)
+		width: 80%
+		position: fixed
+		left: -80%
+
+		// background: $accent
+		// z-index: 100
+		// box-shadow: 3px 0px 3px 0px rgba(0, 0, 0, 0.2)
+
+.sidebar__toggle
+	display: none
+	@include laptop
+		display: block
+		width: 20px
+		height: 46px
+		border-radius: 100%
+		position: fixed
+		top: 50%
+		transform: translateY(-50%)
+		//right: -8px
 		background: $accent
+		box-shadow: 3px 0px 3px 0px rgba(0, 0, 0, 0.2)
 		z-index: 100
-		&:after
-			content: ''
-			display: block
-			width: 20px
-			height: 46px
-			border-radius: 100%
-			position: absolute
-			top: 50vh
-			transform: translateY(-50%)
-			right: -8px
-			background: $accent
-			box-shadow: 3px 0px 3px 0px rgba(0, 0, 0, 0.2)
+		left: calc(0% - 8px)
 
 .wrap-menu.fixed 
-	left: 0
 	width: 30%
 	padding: 0 40px
 	@include laptop
 		width: 80%
-		padding-right: 20px
+		position: fixed
 		left: -80%
-
+		padding: 0
+		
 .fixed 
 	position: fixed
 	top: 0
+	
+.overlay-sidebar
 	@include laptop
-		width: 100vh
-
+		width: 80%
+		height: 100%
+		position: fixed
+		background: $accent
+		box-shadow: 3px 0px 3px 0px rgba(0, 0, 0, 0.2)
+		z-index: 100
+		//left: -5px
+		padding: 0
+	
 .content
 	float: right
 	width: 65%

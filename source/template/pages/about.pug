@@ -33,7 +33,7 @@ block content
             li.overlay__menu-item
               a.overlay__menu-link(href="login.html") Авторизация
    
-    a(href="").down-arrow.hero__down-arrow
+    a(href="#down").down-arrow.hero__down-arrow
       img(src="assets/img/icons/svg/arrow_down.svg", alt="").down-arrow__icon
     
     .hero__section
@@ -43,11 +43,12 @@ block content
       .user-block.user-blok--transparent
         .user__photo-wrap
           .user__photo
-            img(src="assets/img/content/avatar-small.jpg", alt="").photo-avatar
+            img(src="assets/img/content/myphoto-small.jpg", alt="").photo-avatar
         .user__name.user__name--big Наталия Петкевич
         .user__desc Личный сайт веб-разработчика
       
   section.section.about
+
     .about__triangle
       .about__triangle-left
         svg(
@@ -61,6 +62,9 @@ block content
           preserveAspectRatio="none"
           class="triangle triangle_fill_beige about__triangles")
           polygon(points="0,100 1000,100 1000,0")
+
+
+    a(href="" id="down")    
     .about__left
       .about__left-title
         .about__section-title
@@ -69,7 +73,7 @@ block content
       .about__left-user
         .user-about
           .user-about__picture
-            img(src="assets/img/content/avatar.jpg", alt="").photo-avatar
+            img(src="assets/img/content/myphoto.jpg", alt="").photo-avatar
           .user-about__title
            .title.title--subtitle
               | Кто я
@@ -89,25 +93,70 @@ block content
               li.skills__item
                 .skills__item-name Frontend
                 ul.skills-section__list
-                  each skillTitle in ['HTML5', 'CSS3', 'JavaScript&jQuery']
-                    li.skills-section__item
-                      .skill
-                        //svg(class="skill__circle `skill__circle--${skillTitle}`)
-                        .skill__name= skillTitle
+                  li.skills-section__item
+                    .skill
+                      svg.circle(viewBox="0 0 110 110")
+                        circle.circle-under
+                        circle.circle-above(transform="rotate(-90 55 55)").circle-above--html
+                      .skill__name HTML5
+                  li.skills-section__item
+                    .skill
+                      svg.circle(viewBox="0 0 110 110")
+                        circle.circle-under
+                        circle.circle-above(transform="rotate(-90 55 55)").circle-above--css
+                      .skill__name CSS3
+                  li.skills-section__item
+                    .skill
+                      svg.circle(viewBox="0 0 110 110")
+                        circle.circle-under
+                        circle.circle-above(transform="rotate(-90 55 55)").circle-above--js
+                      .skill__name JavaScript&jQuery
                 .skills__item-name Backend
                 ul.skills-section__list
-                  each skillTitle in ['PHP', 'mySQL', 'Node.js  &npm', 'Mongo.db']
-                    li.skills-section__item
-                      .skill
-                        svg.skill__circle
-                        .skill__name= skillTitle
+                  li.skills-section__item
+                    .skill
+                      svg.circle(viewBox="0 0 110 110")
+                        circle.circle-under
+                        circle.circle-above(transform="rotate(-90 55 55)").circle-above--php
+                      .skill__name PHP
+                  li.skills-section__item
+                    .skill
+                      svg.circle(viewBox="0 0 110 110")
+                        circle.circle-under
+                        circle.circle-above(transform="rotate(-90 55 55)").circle-above--mySQL
+                      .skill__name mySQL
+                  li.skills-section__item
+                    .skill
+                      svg.circle(viewBox="0 0 110 110")
+                        circle.circle-under
+                        circle.circle-above(transform="rotate(-90 55 55)").circle-above--node
+                      .skill__name Node.js  &npm
+                  li.skills-section__item
+                    .skill
+                      svg.circle(viewBox="0 0 110 110")
+                        circle.circle-under
+                        circle.circle-above(transform="rotate(-90 55 55)").circle-above--mongo
+                      .skill__name Mongo.db
                 .skills__item-name WorkFlow
                 ul.skills-section__list
-                  each skillTitle in ['Git', 'Gulp', 'Bower']
-                    li.skills-section__item
-                      .skill
-                        svg.skill__circle
-                        .skill__name= skillTitle
+                  li.skills-section__item
+                    .skill
+                      svg.circle(viewBox="0 0 110 110")
+                        circle.circle-under
+                        circle.circle-above(transform="rotate(-90 55 55)").circle-above--git
+                      .skill__name Git
+                  li.skills-section__item
+                    .skill
+                      svg.circle(viewBox="0 0 110 110")
+                        circle.circle-under
+                        circle.circle-above(transform="rotate(-90 55 55)").circle-above--gulp
+                      .skill__name Gulp
+                  li.skills-section__item
+                    .skill
+                      svg.circle(viewBox="0 0 110 110")
+                        circle.circle-under
+                        circle.circle-above(transform="rotate(-90 55 55)").circle-above--bower
+                      .skill__name Bower
 
   section.section.map
     .map__container#map

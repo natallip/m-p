@@ -1,5 +1,5 @@
 // hamburger
-var hamburger = function(){
+let hamburger = function(){
   $('#toggle').click(function() {
    $(this).toggleClass('active');
    $('#overlay').toggleClass('open');
@@ -7,5 +7,5 @@ var hamburger = function(){
  };
 
 
-
+export {hamburger};
 
