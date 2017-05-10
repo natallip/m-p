@@ -23,7 +23,7 @@ if($(".flipper").length) {
         $('#myCard').addClass('flip');
         $('.authorization').fadeOut(600);
         
-        console.log(1);
+       
     });
     $('#btn--onmain').on('click', function (e) {
         e.preventDefault; 
@@ -31,7 +31,7 @@ if($(".flipper").length) {
         $('#myCard').addClass('flip-back');
         $('.authorization').fadeIn(600);
         
-        console.log(2);
+       
     });
 };
 
