@@ -38,8 +38,9 @@ let sendForm = (function () {
 //Отправка формы
     var _sendContactForm = function(e) {
         e.preventDefault();
-        var form = $(this);
+        var form = $('#contact-form');
         var url = '../mail.php';
+        console.log(1);
 
         var myServerGiveMeAnAnswer = _ajaxForm(form, url);
 
@@ -53,9 +54,10 @@ let sendForm = (function () {
 
     var _sendLoginForm = function(e) {
         e.preventDefault();
-        var form = $(this);
+        var form = $('#login-form');
         var url = '../login.php';
-
+        console.log(2);
+       
         var myServerGiveMeAnAnswer = _ajaxForm(form, url);
 
         myServerGiveMeAnAnswer.done(function(answer) {
