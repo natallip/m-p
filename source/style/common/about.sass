@@ -387,18 +387,133 @@
 		margin-bottom: 10px
 
 .skill
-	width: 120px
-	height: 120px
-	border: 20px solid rgb(223, 220, 213)
-	border-radius: 50%
+	width: 110px
+	height: 110px
 	position: relative
-	@include laptop 
-		width: 110px
-		height: 110px
+	
+.circle
+	width: 110px
+	height: 110px
+	fill: none
+	stroke-width: 20
 
-.skill__circle
-	width: 80px
-	height: 80px
+.circle
+	r: 45
+	cx: 55
+	cy: 55
+
+.circle-under
+	stroke: #dfdcd5
+	r: 45
+	cx: 50%
+	cy: 50%
+
+.circle-above
+	stroke: $accent
+	stroke-dasharray: .0010 282.6
+	transition: all 2s
+	r: 45
+	cx: 50%
+	cy: 50%
+
+
+.circle-above 
+	&--html
+		animation: html 2s ease forwards
+	&--css 
+		animation: css 2s ease forwards
+		animation-delay: .5s
+	&--js 
+		animation: js 2s ease forwards
+		animation-delay: 1s
+	&--php
+		animation: php 2s ease forwards
+	&--mySQL 
+		animation: mySQL 2s ease forwards
+		animation-delay: .5s
+	&--node 
+		animation: node 2s ease forwards
+		animation-delay: 1s
+	&--mongo
+		animation: mongo 2s ease forwards
+		animation-delay: 1.5s
+	&--git
+		animation: git 2s ease forwards
+	&--gulp
+		animation: gulp 2s ease forwards
+		animation-delay: .5s
+	&--webpack 
+		animation: webpack 2s ease forwards
+		animation-delay: 1s
+	&--bower 
+		animation: bower 2s ease forwards
+		animation-delay: 1.5s
+
+@keyframes html 
+	from 
+		stroke-dasharray: 0 282.6  // 2*r*3.1415
+	to 
+		stroke-dasharray: 254.34 282.6
+ 
+@keyframes css 
+	from 
+		stroke-dasharray: 0 282.6
+	to 
+		stroke-dasharray: 275.34 282.6
+ 
+@keyframes js 
+	from 
+		stroke-dasharray: 0 282.6
+	to 
+		stroke-dasharray: 200 282.6
+ 
+@keyframes php 
+	from 
+		stroke-dasharray: 0 282.6
+	to 
+		stroke-dasharray: 110 282.6
+
+@keyframes mySQL 
+	from 
+		stroke-dasharray: 0 282.6
+	to 
+		stroke-dasharray: 90 282.6
+ 
+@keyframes node
+	from 
+		stroke-dasharray: 0 282.6
+	to 
+		stroke-dasharray: 200 282.6
+
+@keyframes mongo 
+	from 
+		stroke-dasharray: 0 282.6
+	to 
+		stroke-dasharray: 100 282.6
+ 
+@keyframes git 
+	from 
+		stroke-dasharray: 0 282.6
+	to 
+		stroke-dasharray: 220 282.6
+  
+@keyframes gulp 
+	from 
+		stroke-dasharray: 0 282.6
+	to 
+		stroke-dasharray: 235 282.6
+
+@keyframes webpack 
+	from 
+		stroke-dasharray: 0 282.6
+	to 
+		stroke-dasharray: 115 282.6
+ 
+@keyframes bower 
+	from 
+		stroke-dasharray: 0 282.6
+	to 
+		stroke-dasharray: 280 282.6
 	
 .skill__name
 	position: absolute
@@ -481,10 +596,7 @@ footer
 	@include laptop
 		height: 220px
 		margin-top: -220px
-	@include tablets
-		//height: 250px
-		//margin-top: -250px
-		//padding: 0 20px
+	
 
 .footer
 	background: rgba($main-font-color, .85)
@@ -580,8 +692,7 @@ footer
 	height: 148px
 	@include laptop
 		height: 220px
-	@include tablets
-		//height: 250px
+	
 		
 
 

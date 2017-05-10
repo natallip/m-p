@@ -45,7 +45,7 @@
     }
     
     li {
-      animation: fadeInRight .5s ease forwards;
+      animation: fade .5s ease forwards;
       animation-delay: .35s;
       
       &:nth-of-type(2) {
@@ -91,7 +91,7 @@
         position: relative;
         color: #fff;
         text-decoration: none;
-        //overflow: hidden;
+        
 
         &:after, &:before {
           content: "";
@@ -122,52 +122,16 @@
           left: -40px;
           opacity: 1;
         }
-
-
       }
-
-
-
-
-
-
-
-
-
-        // &:hover:after,
-        //  &:focus:after,
-        //  &:active:after {
-        //    //width: 100%;
-          
-
-
-
-
-        //  }
-        
-        // &:after {
-        //   content: '';
-        //   position: absolute;
-        //   bottom: 0;
-        //   left: 50%;
-        //   width: 0%;
-        //   transform: translateX(-50%);
-        //   height: 3px;
-        //   background: #fff;
-        //   transition: .35s;
-        // }
-      }
-    
-  }
+}
+}
 }
 
-@keyframes fadeInRight {
+@keyframes fade {
   0% {
     opacity: 0;
-    //left: 20%;
   }
   100% {
     opacity: 1;
-    //left: 0;
   }
 }

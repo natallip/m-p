@@ -1,11 +1,11 @@
 // blur
-var blur = function() {
-$(document).ready(function(){
-  blur();
-})
-$(window).resize(function(){
-  blur();
-});
+// let blur = function() {
+// $(document).ready(function(){
+//   blur();
+// })
+// $(window).resize(function(){
+//   blur();
+// });
 
 function blur() {
   var imgWidth = $('.blur__bg').width(),
@@ -19,7 +19,11 @@ function blur() {
       'background-position': posX + 'px' + ' ' + posY + 'px'
   })
 }
-};
+// };
+
+export {blur};
+
+
 
 
  // blur Владимир

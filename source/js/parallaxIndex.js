@@ -1,15 +1,17 @@
 // parallax на главной странице по движению мышки
-var parallaxIndex  = function(){
-    var parallaxContainer = document.getElementById('parallax'),
-        layers = parallaxContainer.children;
+//let parallaxIndex  = (function(){
+    
 
 var moveLayers = function (e) {
+	var parallaxContainer = document.getElementById('parallax'),
+    		layers = parallaxContainer.children;
+
    // console.log(e);
     var initialX = (window.innerWidth / 2) - e.pageX,
         initialY = (window.innerHeight / 2) - e.pageY;
 
 [].slice.call(layers).forEach(function (layer, i) {
-console.log(layers);
+//console.log(layers);
     var divider = i/100,
         positionX = initialX * divider,
         positionY = initialY * divider,
@@ -21,9 +23,9 @@ console.log(layers);
  layerStyle.bottom = '-' + bottomPosition + 'px';
 });
 }
-window.addEventListener('mousemove', moveLayers);
+//window.addEventListener('mousemove', moveLayers);
 
-};
+//})();
 
-
+export {moveLayers};
 

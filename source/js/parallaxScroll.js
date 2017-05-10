@@ -1,5 +1,5 @@
 // parallax по скроллу
-var parallaxScroll = function(){
+let parallaxScroll = (function(){
  var parallax = function(){
     var bg = document.querySelector('.hero__bg');
     var user = document.querySelector('.user-block');
@@ -28,5 +28,7 @@ var parallaxScroll = function(){
     parallax.init(wScroll);
  }
 
- };    
+ })();   
+
+ export {parallaxScroll}; 
  
