@@ -1,5 +1,4 @@
 // scrollMenu
-// scrollMenu
 let scrollMenu = (function () {
   var $article = $('.article'),
     $item = $('.sidebar__item'),
@@ -43,6 +42,7 @@ let scrollMenu = (function () {
             .removeClass('sidebar__item--active');
         }
       }
+      
     },
 
     clickOnMenu = function (e) {
