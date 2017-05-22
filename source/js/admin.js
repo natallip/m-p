@@ -36,6 +36,7 @@ function prepareSendFile(e) {
 };
 const formBlog = document.querySelector('#blog');
 formBlog.addEventListener('submit', prepareSendPost);
+
 function prepareSendPost(e) {
   e.preventDefault();
   let data = {
@@ -45,4 +46,24 @@ function prepareSendPost(e) {
   };
   prepareSend('/admin/addpost', formBlog, data);
 };
-//export {prepareSendFile};
+
+const formSkills = document.querySelector('#skills');
+formSkills.addEventListener('submit', prepareSendSkills);
+
+function prepareSendSkills(e) {
+  e.preventDefault();
+  let data = {
+    html: formSkills.html.value,
+    css: formSkills.css.value,
+    js: formSkills.js.value,
+    php: formSkills.php.value,
+    mySQL: formSkills.mySQL.value,
+    node: formSkills.node.value,
+    mongo: formSkills.mongo.value,
+    git: formSkills.git.value,
+    gulp: formSkills.gulp.value,
+    bower: formSkills.bower.value
+  };
+  console.log(data);
+  prepareSend('/admin/addskill', formSkills, data);
+};

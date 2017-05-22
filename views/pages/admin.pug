@@ -14,7 +14,7 @@ block content
                 li.tab TAB 4
             .items
                 .item.item--active
-                    form.form#about(method="POST")
+                    form.form#skills(method="POST")
                         .form__subtitle Страница "Обо мне"
                         .status 
                         .form__container
@@ -22,43 +22,47 @@ block content
                                 .form__legend Frondend
                                 label.form__input-line
                                     .form__skill Html
-                                    input(name="html" type="text").form__skill-input.form__input
+                                    input(name="html" type="text" required).form__skill-input.form__input
                                     .form__skill-percent %
                                 label.form__input-line
                                     .form__skill CSS
-                                    input(name="css" type="text").form__skill-input.form__input
+                                    input(name="css" type="text" required).form__skill-input.form__input
                                     .form__skill-percent %
                                 label.form__input-line
                                     .form__skill JavaScript
-                                    input(name="js" type="text").form__skill-input.form__input
+                                    input(name="js" type="text" required).form__skill-input.form__input
                                     .form__skill-percent %
                             .form__block
                                 .form__legend Backend
                                 label.form__input-line
                                     .form__skill PHP
-                                    input(name="php" type="text").form__skill-input.form__input
+                                    input(name="php" type="text" required).form__skill-input.form__input
+                                    .form__skill-percent %
+                                label.form__input-line
+                                    .form__skill mySQL
+                                    input(name="mySQL" type="text" required).form__skill-input.form__input
                                     .form__skill-percent %
                                 label.form__input-line
                                     .form__skill Node.js
-                                    input(name="node" type="text").form__skill-input.form__input
+                                    input(name="node" type="text" required).form__skill-input.form__input
                                     .form__skill-percent %
                                 label.form__input-line
                                     .form__skill Mongo.db
-                                    input(name="mongo" type="text").form__skill-input.form__input
+                                    input(name="mongo" type="text" required).form__skill-input.form__input
                                     .form__skill-percent %
                             .form__block
                                 .form__legend Workflow
                                 label.form__input-line
                                     .form__skill Git
-                                    input(name="git" type="text").form__skill-input.form__input
+                                    input(name="git" type="text" required).form__skill-input.form__input
                                     .form__skill-percent %
                                 label.form__input-line
                                     .form__skill Gulp
-                                    input(name="gulp" type="text").form__skill-input.form__input
+                                    input(name="gulp" type="text" required).form__skill-input.form__input
                                     .form__skill-percent %
                                 label.form__input-line
                                     .form__skill Bower
-                                    input(name="bower" type="text").form__skill-input.form__input
+                                    input(name="bower" type="text" required).form__skill-input.form__input
                                     .form__skill-percent %
                         .form__input-line
                             input(name="" type="submit" value="Сохранить").form__btn.form__btn-send

@@ -94,4 +94,32 @@ router.post('/addpost', isAdmin, (req, res) => {
   });
 });
 
+
+router.post('/addskill', isAdmin, (req, res) => {
+    //требуем наличия данных
+  // if (!req.body.title || !req.body.date || !req.body.text) {
+  //   //если что-либо не указано - сообщаем об этом
+  //   return res.json({status: 'Укажите данные!'});
+  // }
+  //создаем новую запись и передаем в нее поля из формы
+  const Model = mongoose.model('skill');
+  let item = new Model({html: req.body.html, css: req.body.css, js: req.body.js, php: req.body.php, mySQL: req.body.mySQL, node: req.body.node, mongo: req.body.mongo, git: req.body.git, gulp: req.body.gulp, bower: req.body.bower});
+  item.save().then(
+    //обрабатываем и отправляем ответ в браузер
+    (i) => {
+      return res.json({status: 'Запись успешно добавлена'});
+    }, e => {
+      //если есть ошибки, то получаем их список и так же передаем в шаблон
+    const error = Object
+        .keys(e.errors)
+        .map(key => e.errors[key].message)
+        .join(', ');
+
+      //обрабатываем шаблон и отправляем его в браузер
+    res.json({
+      status: 'При добавление записи произошла ошибка: ' + error
+    });
+  });
+});
+
 module.exports = router;

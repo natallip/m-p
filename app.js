@@ -28,6 +28,7 @@ require('./models/db-close');
 require('./models/blog');
 require('./models/pic');
 require('./models/user');
+require('./models/skill');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
