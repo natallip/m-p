@@ -1,0 +1,113 @@
+extends ../_template-admin
+
+block content
+
+    .admin__wrap
+        .admin__header
+            .admin__title Панель администрирования
+            a(href="/").admin__link Вернуться на сайт
+        .admin__content
+            ul.tabs
+                li.tab.tab--active TAB 1
+                li.tab TAB 2
+                li.tab TAB 3
+                li.tab TAB 4
+            .items
+                .item.item--active
+                    form.form#skills(method="POST")
+                        .form__subtitle Страница "Обо мне"
+                        .status 
+                        .form__container
+                            .form__block
+                                .form__legend Frondend
+                                label.form__input-line
+                                    .form__skill Html
+                                    input(name="html" type="text" required).form__skill-input.form__input
+                                    .form__skill-percent %
+                                label.form__input-line
+                                    .form__skill CSS
+                                    input(name="css" type="text" required).form__skill-input.form__input
+                                    .form__skill-percent %
+                                label.form__input-line
+                                    .form__skill JavaScript
+                                    input(name="js" type="text" required).form__skill-input.form__input
+                                    .form__skill-percent %
+                            .form__block
+                                .form__legend Backend
+                                label.form__input-line
+                                    .form__skill PHP
+                                    input(name="php" type="text" required).form__skill-input.form__input
+                                    .form__skill-percent %
+                                label.form__input-line
+                                    .form__skill mySQL
+                                    input(name="mySQL" type="text" required).form__skill-input.form__input
+                                    .form__skill-percent %
+                                label.form__input-line
+                                    .form__skill Node.js
+                                    input(name="node" type="text" required).form__skill-input.form__input
+                                    .form__skill-percent %
+                                label.form__input-line
+                                    .form__skill Mongo.db
+                                    input(name="mongo" type="text" required).form__skill-input.form__input
+                                    .form__skill-percent %
+                            .form__block
+                                .form__legend Workflow
+                                label.form__input-line
+                                    .form__skill Git
+                                    input(name="git" type="text" required).form__skill-input.form__input
+                                    .form__skill-percent %
+                                label.form__input-line
+                                    .form__skill Gulp
+                                    input(name="gulp" type="text" required).form__skill-input.form__input
+                                    .form__skill-percent %
+                                label.form__input-line
+                                    .form__skill Bower
+                                    input(name="bower" type="text" required).form__skill-input.form__input
+                                    .form__skill-percent %
+                        .form__input-line
+                            input(name="" type="submit" value="Сохранить").form__btn.form__btn-send
+
+                .item
+                    form.form#blog( method="POST")
+                        .form__subtitle Страница "Блог"
+                        .status 
+                        .form__container
+                            .form__legend Добавить запись 
+                            label.form__input-line
+                                input(name="title" type="text" placeholder="Название").form__input
+                            label.form__input-line
+                                - 
+                                    var data = new Date().toLocaleDateString('ru', { 
+                                        year: 'numeric', 
+                                        month: '2-digit', 
+                                        day: '2-digit'
+                                        })
+                                input(name="date" type="date" value=`${data}`).form__input
+                            textarea(placeholder="Содержание" name="text").form__textarea
+                            .form__btns.form__input-line
+                                input(name="" type="submit" value="Добавить").form__btn.form__btn-send
+                                input(name="" type="reset" value="Очистить").form__btn.form__btn-reset
+
+                .item
+                    form.form#upload(action='/upload' method="POST" enctype="multipart/form-data")
+                        .form__subtitle Страница "Мои работы"
+                        
+                        .status
+                            //.status__inner
+                                //.status__message
+                                    //| Сообщение отправлено
+                                //a(href="").status__close X
+                        .form__container
+                            .form__legend Добавить работу
+                            label.form__input-line
+                                input(name="project" type="text" placeholder="Название проекта").form__input#file-desc 
+                            label.form__input-line
+                                input(name="technology" type="text" placeholder="Технологии").form__input#file-tech
+                            label.form__input-line.form__input-img
+                                | Загрузить картинку 
+                                input(name="photo" type="file" required accept="image/*").form__input#file-select
+                                
+                            .form__btns.form__input-line
+                                input(name="" type="submit" value="Добавить").form__btn.form__btn-send
+                                input(name="" type="reset" value="Очистить").form__btn.form__btn-reset
+    

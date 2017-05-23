@@ -1,0 +1,125 @@
+extends ../_template
+    
+block content
+  section.section.hero
+    .hero__bg
+      img(src="assets/img/bg/portfolio.jpg", alt="").hero__bg-img
+
+    ul.socials.hero__socials
+      each item in ['vk', 'gh', 'in']
+        li.socials__item
+          a(href="#" class=`socials__link socials__link_${item}`)
+
+    .hero__hamburger
+    
+      .hamburger#toggle
+        .hamburger__line
+        .hamburger__line
+        .hamburger__line
+
+      .overlay#overlay
+        nav.overlay__menu
+          ul.overlay__menu-list
+            li.overlay__menu-item
+              a.overlay__menu-link(href="/works") Мои работы
+            li.overlay__menu-item
+              a.overlay__menu-link(href="/about") Обо мне
+            li.overlay__menu-item
+              a.overlay__menu-link(href="/blog") Блог
+            li.overlay__menu-item
+              a.overlay__menu-link(href="/login") Авторизация
+
+    //a(href="").down-arrow.hero__down-arrow
+      //img(src="assets/img/icons/svg/arrow_down.svg", alt="").down-arrow__icon
+
+    .hero__section
+      img(src="assets/img/decor/blog-header.png", alt="").section__title.section__title--blog 
+    
+    .hero__user
+      .user-block.user-blok--transparent
+        .user__photo-wrap
+          .user__photo
+            img(src="assets/img/content/myphoto-small.jpg", alt="").photo-avatar
+        .blog__section-title 
+          .title.title--blog Блог
+        .user__desc Статьи, которые я написала
+
+  section.section.blog
+    .about__triangle
+      .about__triangle-left
+        svg(
+          viewbox="0 0 1000 100" 
+          preserveAspectRatio="none"
+          class="triangle triangle_fill_fff about__triangles")
+          polygon(points="0,0 0,100 1000,100")
+      .about__triangle-right
+        svg(
+          viewbox="0 0 1000 100" 
+          preserveAspectRatio="none"
+          class="triangle triangle_fill_fff about__triangles")
+          polygon(points="0,100 1000,100 1000,0")
+   
+    aside.sidebar
+      .wrap-menu
+        ul.sidebar__menu
+          each index in items
+            li.sidebar__item= index.title
+              //.article__title= index.title
+
+          //li.sidebar__item.sidebar__item--active 
+            //|Самое важное о SASS
+          //li.sidebar__item
+            //| Приемы в верстке, без которых не обходится не один сайт
+          //li.sidebar__item
+            //| Необходимый набор Gulp плагинов
+          //li.sidebar__item
+            //| Почему я выбрал Jade
+        .sidebar__toggle
+
+    main.content
+      ul.article-wrap
+        each index in items
+          li.article
+            .article__title= index.title
+              -
+                var data = new Date(index.date).toLocaleDateString('ru', { 
+                              year: 'numeric', 
+                              month: '2-digit', 
+                              day: '2-digit'
+                              })
+            .article__data= data
+            .article__text= index.body
+        
+ 
+     
+block footer
+  footer.footer
+    .footer__line
+      .footer__left
+        ul.menu.footer__menu
+          li.menu__item
+            a(href="/works").menu__link Мои работы
+          li.menu__item
+            a(href="/about").menu__link Обо мне
+          li.menu__item
+            a(href="/blog").menu__link Блог
+          li.menu__item
+            a(href="/login").menu__link Авторизация
+      .footer__right
+        ul.socials.footer__socials
+          each item in ['vk', 'gh', 'in']
+            li.socials__item
+              a(href="#" class=`socials__link socials__link_${item}`)
+
+    .footer__line
+      .footer__left.footer__about-me
+        | Я веб разработчик из Гродно, и этот сайт я сделала в рамках обучения в школе онлайн образования Loftschool
+      .footer__right.footer__about-me
+        span
+          | &copy; Наталия Петкевич | создано с любовью в LoftSchool | 2017
+
+
+
+
+
+

@@ -34,13 +34,14 @@ $.gulp.task('default', $.gulp.series(
   'clean',
   $.gulp.parallel(
     'sass',
-    'pug',
     'js:foundation',
     'js:process',
     'copy:image',
     'copy:font',
-    'css:foundation'
+    'css:foundation',
+    'create:version'
   ),
+  'nodemon',
   $.gulp.parallel(
     'watch',
     'serve'

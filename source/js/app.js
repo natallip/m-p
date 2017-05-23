@@ -7,8 +7,6 @@ import {init} from './map.js';
 import {slider} from './slider.js';
 import {blur} from './blur.js';
 import {scrollMenu} from './scrollMenu.js';
-import {sendForm} from './form.js';
-
 
 
 
@@ -22,16 +20,14 @@ if($(".flipper").length) {
         $('#myCard').removeClass('flip-back');
         $('#myCard').addClass('flip');
         $('.authorization').fadeOut(600);
-        
-       
+        //console.log(1);
     });
     $('#btn--onmain').on('click', function (e) {
         e.preventDefault; 
         $('#myCard').removeClass('flip');
         $('#myCard').addClass('flip-back');
         $('.authorization').fadeIn(600);
-        
-       
+        //console.log(2);
     });
 };
 
@@ -70,10 +66,39 @@ if($(".sidebar__menu").length) {
     scrollMenu.initToggle();
 };
 
-if ($('.form').length) {
-    sendForm.init();
-};
+import prepareSend from './prepareSend';
 
+const formMail = document.querySelector('#mail');
+const formLogin = document.querySelector('#loginForm');
 
+if (formMail) {
+  formMail.addEventListener('submit', prepareSendMail);
+}
+if (formLogin) {
+  formLogin.addEventListener('submit', prepareSendLogin);
+}
 
+function prepareSendMail(e) {
+  e.preventDefault();
+  let data = {
+    name: formMail.name.value,
+    email: formMail.email.value,
+    text: formMail.text.value
+  };
+  prepareSend('/works', formMail, data);
+}
+
+function prepareSendLogin(e) {
+  e.preventDefault();
+  let data = {
+    login: formLogin.login.value,
+    password: formLogin.password.value
+  };
+  
+  prepareSend('/login', formLogin, data, function(data) {
+    if (data === 'Авторизация успешна!') {
+      location.href = '/admin';
+    }
+  });
+}
 

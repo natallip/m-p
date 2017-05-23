@@ -1,0 +1,128 @@
+extends ../_template-index
+
+block content
+  .preloader
+    .preloader__spinner
+      .preloader__animation
+      .preloader__percents 0%
+
+  .welcome__parallax
+    .parallax#parallax
+      .parallax__layer
+        img(src="assets/img/parallax/Layer 10.png" alt="")
+      .parallax__layer
+        img(src="assets/img/parallax/Layer 9.png" alt="")
+      .parallax__layer
+        img(src="assets/img/parallax/Layer 8.png" alt="")
+      .parallax__layer
+        img(src="assets/img/parallax/Layer 7.png" alt="")
+      .parallax__layer
+        img(src="assets/img/parallax/Layer 6.png" alt="")
+      .parallax__layer
+        img(src="assets/img/parallax/Layer 5.png" alt="")
+      .parallax__layer
+        img(src="assets/img/parallax/Layer 4.png" alt="")
+      .parallax__layer
+        img(src="assets/img/parallax/Layer 3.png" alt="")
+      .parallax__layer
+        img(src="assets/img/parallax/Layer 2.png" alt="")
+      .parallax__layer
+        img(src="assets/img/parallax/Layer 1.png" alt="")
+
+    .authorization.welcome__authorization#btn Авторизоваться
+
+    .flip-container.section__user-block#myCard(ontouchstart="this.classList.toggle('hover');")
+      .flipper
+        .user-block.front
+          .user__photo-wrap
+            .user__photo
+              img(src="assets/img/content/myphoto-small.jpg", alt="").photo-avatar
+          .user__name Наталия Петкевич
+          .user__desc Личный сайт веб-разработчика
+
+          ul.socials.user__socials
+            each item in ['vk', 'gh', 'in']
+              li.socials__item
+                a(href="#" class=`socials__link socials__link_${item}`)
+
+          ul.menu.user__line-green
+            li.form-menu__item
+              a(href="/works").menu__link Мои работы
+            li.form-menu__item
+              a(href="/about").menu__link Обо мне
+            li.form-menu__item
+              a(href="/blog").menu__link Блог
+
+
+        .user-block.back
+          
+
+          form.form#loginForm
+            .status
+            .title.title--subtitle Авторизуйтесь
+            label(class="form__elem" for="login")
+              .form__elem-icon
+                i.icon-user
+              input(class="form__elem-input" type="text" id="login" name="login" placeholder="Логин" required)
+
+            label(class="form__elem" for="password")
+              .form__elem-icon
+                i.icon-key
+              input(class="form__elem-input" type="password" id="password" name="password" placeholder="Пароль" required)
+
+            label(class="form__elem-checkbox" for="checkbox")
+              input(class="form__checkbox-hidden" type="checkbox"  id="checkbox" name="checkbox" checked)
+              span.form__checkbox-custom
+                i.icon-check
+              span.form__elem-title Я человек
+
+            .form__text Вы точно не робот?
+            .form__line
+              label(class="form__elem-radio" for="radio-yes")
+                input(class="form__radio-hidden" type="radio"  id="radio-yes" name="radio-yes" value="yes" checked)
+                span.form__radio-custom
+                span.form__elem-title Да
+
+              label(class="form__elem-radio" for="radio-no")
+                input(class="form__radio-hidden" type="radio"  id="radio-no" name="radio-yes" value="no")
+                span.form__radio-custom
+                span.form__elem-title Не уверен
+                   
+            .user__line-green
+              a(href="#").form__elem-main.form-menu__item#btn--onmain 
+                | На главную
+                  
+              input(type="submit" id="submit" name="submit" value="Войти").form__elem-submit.form-menu__item
+              //a(href="/admin").form__elem-submit.form-menu__item Войти
+
+      .status-popup#success
+        .status-popup__inner
+          .status-popup__message.success-message
+            | Сообщение отправлено
+          a(href="").status-popup__close X
+                 
+      .status-popup#error
+        .status-popup__inner
+          .status-popup__message.error-message
+            | Произошла ошибка
+          a(href="").status-popup__close X  
+
+          
+    .footer__welcome
+      | &copy; Наталия Петкевич | создано с любовью в LoftSchool | 2017
+
+    
+  
+
+    
+
+        
+    
+
+  
+
+
+
+
+
+

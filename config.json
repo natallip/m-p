@@ -1,0 +1,20 @@
+{
+  "db": {
+    "host": "localhost",
+    "port": "27017",
+    "name": "test",
+    "user": "root",
+    "password": "12345"
+  },
+  "upload": "public/upload",
+  "mail": {
+    "subject": "Сообщение с сайта-портфолио",
+    "smtp": {
+      "service": "Gmail",
+      "auth": {
+        "user": "mySuperTest8@gmail.com",
+        "pass": "s5gg2t5ewa"
+      }
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "Frontend" : {
+    "html" : 90,
+    "css" : 90,
+    "js" : 65
+  },
+  "Backend" : {
+    "php" : 40,
+    "mySQL" : 35,
+    "node" : 45,
+    "mongo" : 55
+  },
+  "WorkFlow" : {
+    "git" : 80,
+    "gulp" : 70,
+    "bower" : 85
+  }
+}
