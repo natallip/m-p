@@ -30,13 +30,20 @@ function prepareSendFile(e) {
   var formData = new FormData();
   var file = document.querySelector('#file-select').files[0];
   var name = document.querySelector('#file-desc').value;
+  var tech = document.querySelector('#file-tech').value;
+  //console.log(tech);
 
   formData.append('photo', file, file.name);
+  console.log(file);
   formData.append('name', name);
+  //console.log(name);
+  formData.append('tech', tech);
+  //console.log(tech);
 
   resultContainer.innerHTML = 'Uploading...';
   (0, _upload2.default)('/admin/upload', formData, function (data) {
     resultContainer.innerHTML = data;
+    //console.log(formData);
     formUpload.reset();
   });
   //console.log(11111);
@@ -71,7 +78,7 @@ function prepareSendSkills(e) {
     gulp: formSkills.gulp.value,
     bower: formSkills.bower.value
   };
-  console.log(data);
+  //console.log(data);
   (0, _prepareSend2.default)('/admin/addskill', formSkills, data);
 };
 

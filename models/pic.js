@@ -5,7 +5,11 @@ const mongoose = require('mongoose'),
   PicSchema = new Schema({
     name: {
       type: String,
-      required: [true, 'Укажите описание картинки']
+      required: [true, 'Укажите название проекта']
+    },
+    tech: {
+      type: String
+      //required: [true, 'Укажите используемые технологии']
     },
     picture: {
       type: String
