@@ -47,7 +47,8 @@ router.post('/upload', isAdmin, function (req, res) {
       let dir = config
         .upload
         .substr(config.upload.indexOf('/'));
-      const item = new Model({name: fields.name, picture: path.join(dir,files.photo.name)});
+      const item = new Model({name: fields.name, tech: fields.tech, picture: path.join(dir,files.photo.name)});
+      //const item = new Model({name: fields.name, tech: fields.tech, picture: files.photo.name});
       item
         .save()
         .then(

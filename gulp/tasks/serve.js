@@ -5,6 +5,7 @@ module.exports = function() {
     $.browserSync.init({
       proxy: 'http://localhost:3000',
       port: 4000
+      //port: process.env.PORT
     });
   });
 };

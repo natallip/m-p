@@ -73,49 +73,26 @@ block content
               i.icon-chevron-right
             a(href="#").slider__btn.slider__btn--prev
               i.icon-chevron-left
-                                
+
+
+                                 
           .slider__images
             ul.slider__list
-              li.slider__item.active
-                .slider__photo
-                  img(src="assets/img/slider/work-1.png", alt="").photo-slider
-                .slider__descr.descr
-                  .descr__title Сайт школы онлайн Образования
-                  .descr__technology HTML , CSS, JAVASCRIPT
-                  .descr__site
-                    a(href="#").decsr__btn 
-                      i.icon-link
-                      span Посмотреть сайт
-              li.slider__item
-                .slider__photo
-                  img(src="assets/img/slider/work-2.png", alt="").photo-slider
-                .slider__descr.descr
-                  .descr__title Сайт школы онлайн Образования
-                  .descr__technology HTML , CSS, JAVASCRIPT
-                  .descr__site
-                    a(href="#").decsr__btn 
-                      i.icon-link
-                      span Посмотреть сайт
-              li.slider__item
-                .slider__photo
-                  img(src="assets/img/slider/work-3.png", alt="").photo-slider
-                .slider__descr.descr
-                  .descr__title Сайт школы онлайн Образования
-                  .descr__technology HTML , CSS, JAVASCRIPT
-                  .descr__site
-                    a(href="#").decsr__btn 
-                      i.icon-link
-                      span Посмотреть сайт
-              li.slider__item
-                .slider__photo
-                  img(src="assets/img/slider/work-4.png", alt="").photo-slider
-                .slider__descr.descr
-                  .descr__title Сайт школы онлайн Образования
-                  .descr__technology HTML , CSS, JAVASCRIPT
-                  .descr__site
-                    a(href="#").decsr__btn 
-                      i.icon-link
-                      span Посмотреть сайт
+              each index in items
+                li.slider__item
+                  .slider__photo
+                    //img(src="/upload/work-4.png", alt="").photo-slider
+                    img(src= index.picture, alt="").photo-slider
+                    .photo-slider= index.picture
+                  .slider__descr.descr
+                    .descr__title= index.name 
+                    .descr__technology= index.tech 
+                    .descr__site
+                      a(href="#").decsr__btn 
+                        i.icon-link
+                        span Посмотреть сайт
+              
+              
             ul.slider__dots
     
 
@@ -153,7 +130,7 @@ block content
       .blur__form-wrapper
         .blur__form
 
-        //form(action="submit.php" method="POST" class="form-contact" id="contact-form")
+       
         form.form-contact.form#mail(action='/works' method="POST")
 
           .status
